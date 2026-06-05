@@ -11,6 +11,26 @@ npm run dev
 
 瀏覽器開啟終端機顯示的網址（通常是 http://localhost:5173）。
 
+## 部署到 GitHub Pages
+
+此目錄已設定 GitHub Actions（`.github/workflows/deploy-web-pages.yml`）。推送到 `main` 且變更 `web/` 時會自動建置並部署。
+
+### 首次啟用（在 GitHub 網站操作一次）
+
+1. 開啟 repo → **Settings** → **Pages**
+2. **Build and deployment** → Source 選 **GitHub Actions**
+3. 推送含 `web/` 的 commit 到 `main`，等待 workflow 完成
+
+網址為：`https://<你的帳號>.github.io/<repo名稱>/`  
+目前 remote 為 `nutrition-helper` 時，即 https://w71800.github.io/nutrition-helper/
+
+### 本機模擬 Pages 路徑
+
+```bash
+VITE_BASE_PATH=/nutrition-helper/ npm run build
+npm run preview
+```
+
 ## PES 資料來源
 
 靜態主檔依 **eNCPT / NCPT 2023 英文版** 整理，包含：

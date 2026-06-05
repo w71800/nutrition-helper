@@ -43,7 +43,7 @@ export default function App() {
   }, [catalog]);
 
   useEffect(() => {
-    fetch("/data/pes-catalog.json")
+    fetch(`${import.meta.env.BASE_URL}data/pes-catalog.json`)
       .then((r) => {
         if (!r.ok) throw new Error(`HTTP ${r.status}`);
         return r.json() as Promise<PesCatalog>;
