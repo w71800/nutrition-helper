@@ -134,12 +134,12 @@ async function handlePublish() {
             · p.{{ problem.page }}
             · {{ isProblemExtracted(problem) ? "已抽取" : "尚未抽取" }}
           </p>
-          <h2>{{ problem.label }}</h2>
+          <h2 class="problem-title">{{ problem.label }}</h2>
           <p v-if="problem.labelEn" class="muted">{{ problem.labelEn }}</p>
           <pre v-if="problem.definition" class="definition">{{ problem.definition }}</pre>
           <p v-else class="muted">尚無定義</p>
 
-          <h3>E（{{ problem.etiologies.length }}）</h3>
+          <h3 class="etiology-heading">E（{{ problem.etiologies.length }}）</h3>
           <ol v-if="problem.etiologies.length" class="plain-list">
             <li v-for="item in problem.etiologies" :key="item.id">
               {{ item.label }}
@@ -151,7 +151,7 @@ async function handlePublish() {
           <p v-else class="muted">無</p>
 
           <template v-for="category in problem.signs" :key="category.id">
-            <h3>{{ signCategoryLabel(category.id) }}</h3>
+            <h3 class="sign-category">{{ signCategoryLabel(category.id) }}</h3>
             <p v-if="!category.items.length" class="muted">無</p>
             <ul v-else class="plain-list">
               <li v-for="item in category.items" :key="item.id">
