@@ -168,13 +168,6 @@ export function validatePesCatalog(input: unknown): CatalogValidation {
     );
     if (hasDefinition || problem.etiologies.length > 0 || hasSigns) {
       stats.extracted += 1;
-      if (problem.etiologies.length === 0) {
-        warnings.push({
-          level: "warning",
-          path: `${pPath}.etiologies`,
-          message: `${label ?? problemId} 已開始抽取但沒有病因`,
-        });
-      }
     }
   });
 

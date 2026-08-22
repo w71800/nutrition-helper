@@ -148,7 +148,7 @@ async function handlePublish() {
               </span>
             </li>
           </ol>
-          <p v-else class="muted">尚未抽取病因</p>
+          <p v-else class="muted">無</p>
 
           <template v-for="category in problem.signs" :key="category.id">
             <h3>{{ signCategoryLabel(category.id) }}</h3>

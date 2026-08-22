@@ -18,6 +18,8 @@ const {
   etiologyId,
   signId,
   problem,
+  hasEtiologies,
+  etiologyMissing,
   onProblemChange,
   ready,
   labels,
@@ -68,7 +70,7 @@ async function handleCopy() {
       <p class="eyebrow">工具</p>
       <h1>PES 診斷文本</h1>
       <p class="lede">
-        依序選擇 P → E → S，完成後可一鍵複製
+        選擇 P 與 S；有病因時需再選 E，完成後可一鍵複製
         <span class="meta-inline">
           · 資料來源 {{ source === "d1" ? "D1 已發布版" : "staged JSON" }}
         </span>
@@ -94,11 +96,12 @@ async function handleCopy() {
       <label class="field">
         <span class="field-label">E（病因）</span>
         <select
-          :value="etiologyId"
-          :disabled="!problem || problem.etiologies.length === 0"
+          :value="problem && !hasEtiologies ? 'none' : etiologyId"
+          :disabled="!problem || !hasEtiologies"
           @change="etiologyId = ($event.target as HTMLSelectElement).value"
         >
-          <option value="">請選擇</option>
+          <option v-if="!problem || hasEtiologies" value="">請選擇</option>
+          <option v-else value="none">無</option>
           <option
             v-for="item in problem?.etiologies ?? []"
             :key="item.id"
@@ -107,6 +110,7 @@ async function handleCopy() {
             {{ item.label }}
           </option>
         </select>
+        <span v-if="etiologyMissing" class="field-hint">請選擇病因</span>
       </label>
 
       <label class="field">

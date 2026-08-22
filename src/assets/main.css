@@ -152,6 +152,11 @@ h1 {
   color: #a8a29e;
 }
 
+.field-hint {
+  color: #b45309;
+  font-size: 0.85rem;
+}
+
 .preview,
 .stat,
 .catalog-group,
