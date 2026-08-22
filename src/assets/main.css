@@ -275,6 +275,33 @@ h1 {
   font-size: 0.8rem;
 }
 
+.definition {
+  margin: 0.75rem 0 0;
+  font-family: inherit;
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.plain-list,
+.detail-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.plain-list li {
+  margin: 0.4rem 0;
+}
+
+.detail-list {
+  margin-top: 0.25rem;
+  color: #57534e;
+}
+
+.json-heading {
+  margin: 1.5rem 0 0;
+  font-size: 0.95rem;
+}
+
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.84em;

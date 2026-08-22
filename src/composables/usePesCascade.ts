@@ -1,4 +1,5 @@
 import { computed, ref, watch, type Ref } from "vue";
+import { flattenSigns } from "@shared/catalog";
 import type { PesCatalog } from "@shared/pes";
 
 export function usePesCascade(catalog: Ref<PesCatalog | null>) {
@@ -13,17 +14,12 @@ export function usePesCascade(catalog: Ref<PesCatalog | null>) {
     problem.value?.etiologies.find((item) => item.id === etiologyId.value),
   );
   const sign = computed(() =>
-    etiology.value?.signs.find((item) => item.id === signId.value),
+    problem.value ? flattenSigns(problem.value).find((item) => item.id === signId.value) : undefined,
   );
 
   const onProblemChange = (id: string) => {
     problemId.value = id;
     etiologyId.value = "";
-    signId.value = "";
-  };
-
-  const onEtiologyChange = (id: string) => {
-    etiologyId.value = id;
     signId.value = "";
   };
 
@@ -35,6 +31,7 @@ export function usePesCascade(catalog: Ref<PesCatalog | null>) {
           p: problem.value!.label,
           e: etiology.value!.label,
           s: sign.value!.label,
+          details: sign.value!.details,
         }
       : null,
   );
@@ -53,7 +50,6 @@ export function usePesCascade(catalog: Ref<PesCatalog | null>) {
     etiology,
     sign,
     onProblemChange,
-    onEtiologyChange,
     ready,
     labels,
   };

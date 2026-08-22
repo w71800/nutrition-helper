@@ -1,1888 +1,2060 @@
 {
   "meta": {
-    "edition": "2023",
-    "terminology": "NCPT / eNCPT",
-    "publishedBy": "Academy of Nutrition and Dietetics",
-    "lastUpdated": "2026-06-05",
-    "sources": [
-      "https://www.ncpro.org/freely-available-ncp-terms (2023 English edition, Nutrition Diagnosis terms)",
-      "https://www.ncpro.org/vault/2570/web/files/NCPT%202023%20Change%20Summary%20Table%20-%20ND.pdf",
-      "Public NCP diagnostic taxonomy reference (IDNT-era structure, codes mapped to 2023 renames)"
-    ],
-    "disclaimer": "完整病因（E）與徵象／症狀（S）清單以訂閱 eNCPT 之診斷參考表為準；本檔收錄 2023 公開術語與常見教學用 PES 組合，供臨床選擇輔助，非取代官方授權資料庫。",
-    "pesFormat": "[Problem] related to [Etiology] as evidenced by [Signs/Symptoms]"
+    "terminology": "中文版營養診斷條目",
+    "lastUpdated": "2026-08-22",
+    "disclaimer": "資料依紙本營養診斷手冊整理，供營養師工作輔助。完整內容以紙本為準。",
+    "pesFormat": "P：… / E：… / S：…"
   },
   "domains": [
     {
-      "id": "NI",
-      "label": "攝取",
-      "labelEn": "Intake"
+      "id": "anthropometrics",
+      "label": "體位",
+      "labelEn": "Anthropometrics"
     },
     {
-      "id": "NC",
-      "label": "臨床",
-      "labelEn": "Clinical"
+      "id": "nutritional-status",
+      "label": "營養狀況",
+      "labelEn": "Nutritional status"
     },
     {
-      "id": "NB",
-      "label": "行為－環境",
-      "labelEn": "Behavioral-Environmental"
+      "id": "energy-intake",
+      "label": "熱量攝取",
+      "labelEn": "Energy intake"
+    },
+    {
+      "id": "nutrient-intake",
+      "label": "營養素攝取",
+      "labelEn": "Nutrient intake"
+    },
+    {
+      "id": "physiological",
+      "label": "生理功能",
+      "labelEn": "Physiological function"
+    },
+    {
+      "id": "diet-behavior",
+      "label": "飲食型態與行為",
+      "labelEn": "Dietary patterns and behavior"
     }
   ],
   "problems": [
     {
-      "id": "ni-1-4",
-      "code": "NI-1.4",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "能量攝取不足",
-      "labelEn": "Inadequate energy intake",
-      "definition": "Energy intake that is less than energy expenditure, established reference standards, or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "early-satiety",
-          "label": "提早飽足感",
-          "labelEn": "Early Satiety",
-          "signs": [
-            {
-              "id": "intake-below-needs",
-              "label": "估計攝取低於需求",
-              "labelEn": "intake below needs"
-            },
-            {
-              "id": "weight-loss",
-              "label": "體重下降",
-              "labelEn": "weight loss"
-            }
-          ]
-        },
-        {
-          "id": "swallowing-difficulty",
-          "label": "吞嚥困難",
-          "labelEn": "Swallowing Difficulty",
-          "signs": [
-            {
-              "id": "meals-under-25pct",
-              "label": "進食量 <25%",
-              "labelEn": "meals under 25pct"
-            },
-            {
-              "id": "weight-loss-reported",
-              "label": "自述體重減輕",
-              "labelEn": "weight loss reported"
-            }
-          ]
-        },
-        {
-          "id": "increased-energy-needs-unmet",
-          "label": "能量需求增加未滿足",
-          "labelEn": "Increased Energy Needs Unmet",
-          "signs": [
-            {
-              "id": "intake-below-75pct",
-              "label": "攝取 <75% 計算需求",
-              "labelEn": "intake below 75pct"
-            },
-            {
-              "id": "hypermetabolism",
-              "label": "代謝亢進狀態",
-              "labelEn": "hypermetabolism"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-1-5",
-      "code": "NI-1.5",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "能量攝取過多",
-      "labelEn": "Excessive energy intake",
-      "definition": "Energy intake that exceeds energy expenditure, established reference standards, or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "binge-eating",
-          "label": "暴食行為",
-          "labelEn": "Binge Eating",
-          "signs": [
-            {
-              "id": "loss-of-control-eating",
-              "label": "進食失控感",
-              "labelEn": "loss of control eating"
-            },
-            {
-              "id": "large-portion-episodes",
-              "label": "大量進食發作",
-              "labelEn": "large portion episodes"
-            }
-          ]
-        },
-        {
-          "id": "high-calorie-foods",
-          "label": "高熱量食物",
-          "labelEn": "High Calorie Foods",
-          "signs": [
-            {
-              "id": "rapid-weight-gain",
-              "label": "體重快速增加",
-              "labelEn": "rapid weight gain"
-            },
-            {
-              "id": "intake-exceeds-needs",
-              "label": "攝取超過需求",
-              "labelEn": "intake exceeds needs"
-            }
-          ]
-        },
-        {
-          "id": "freq-eating-out",
-          "label": "外食頻率高",
-          "labelEn": "Freq Eating Out",
-          "signs": [
-            {
-              "id": "large-portion",
-              "label": "餐量偏大",
-              "labelEn": "large portion"
-            },
-            {
-              "id": "sweet-drinks",
-              "label": "含糖飲料攝取",
-              "labelEn": "sweet drinks"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-2-1",
-      "code": "NI-2.1",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "經口攝取不足",
-      "labelEn": "Inadequate oral intake",
-      "definition": "Oral food/beverage intake that is less than established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "anorexia",
-          "label": "食慾不振",
-          "labelEn": "Anorexia",
-          "signs": [
-            {
-              "id": "intake-below-needs",
-              "label": "估計攝取低於需求",
-              "labelEn": "intake below needs"
-            },
-            {
-              "id": "weight-loss",
-              "label": "體重下降",
-              "labelEn": "weight loss"
-            }
-          ]
-        },
-        {
-          "id": "nausea-vomiting",
-          "label": "噁心嘔吐",
-          "labelEn": "Nausea Vomiting",
-          "signs": [
-            {
-              "id": "meal-skipping",
-              "label": "常跳餐",
-              "labelEn": "meal skipping"
-            },
-            {
-              "id": "low-appetite",
-              "label": "食慾差",
-              "labelEn": "low appetite"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-2-2",
-      "code": "NI-2.2",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "經口攝取過多",
-      "labelEn": "Excessive oral intake",
-      "definition": "Oral food/beverage intake that exceeds established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "large-portions",
-          "label": "餐量過大",
-          "labelEn": "Large Portions",
-          "signs": [
-            {
-              "id": "intake-exceeds-needs",
-              "label": "攝取超過需求",
-              "labelEn": "intake exceeds needs"
-            },
-            {
-              "id": "weight-gain",
-              "label": "體重增加",
-              "labelEn": "weight gain"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-2-3",
-      "code": "NI-2.3",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "腸道營養灌注不足",
-      "labelEn": "Inadequate enteral nutrition infusion",
-      "definition": "Enteral infusion that provides fewer calories or nutrients compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "poor-tolerance-rate",
-          "label": "灌注速率耐受差",
-          "labelEn": "Poor Tolerance Rate",
-          "signs": [
-            {
-              "id": "diarrhea",
-              "label": "腹瀉",
-              "labelEn": "diarrhea"
-            },
-            {
-              "id": "tube-feed-holds",
-              "label": "管灌多次中斷",
-              "labelEn": "tube feed holds"
-            }
-          ]
-        },
-        {
-          "id": "tube-feed-interrupted",
-          "label": "管灌中斷",
-          "labelEn": "Tube Feed Interrupted",
-          "signs": [
-            {
-              "id": "weight-loss-recent",
-              "label": "近期體重下降",
-              "labelEn": "weight loss recent"
-            },
-            {
-              "id": "intake-below-order",
-              "label": "實際灌注低於醫囑",
-              "labelEn": "intake below order"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-2-4",
-      "code": "NI-2.4",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "腸道營養灌注過多",
-      "labelEn": "Excessive enteral nutrition infusion",
-      "definition": "Enteral infusion that provides more calories or nutrients compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "overfeeding-order",
-          "label": "過度灌注醫囑",
-          "labelEn": "Overfeeding Order",
-          "signs": [
-            {
-              "id": "gi-tolerance-poor",
-              "label": "腸胃耐受不良",
-              "labelEn": "gi tolerance poor"
-            },
-            {
-              "id": "weight-gain-unintended",
-              "label": "非刻意體重增加",
-              "labelEn": "weight gain unintended"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-2-5",
-      "code": "NI-2.5",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "靜脈營養灌注不足",
-      "labelEn": "Inadequate parenteral nutrition infusion",
-      "definition": "Parenteral infusion that provides fewer calories or nutrients compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "pn-not-initiated",
-          "label": "靜脈營養尚未開始",
-          "labelEn": "Pn Not Initiated",
-          "signs": [
-            {
-              "id": "intake-minimal",
-              "label": "攝取極少",
-              "labelEn": "intake minimal"
-            },
-            {
-              "id": "catabolic-state",
-              "label": "分解代謝狀態",
-              "labelEn": "catabolic state"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-2-11",
-      "code": "NI-2.11",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "不均衡飲食型態",
-      "labelEn": "Unbalanced diet pattern",
-      "definition": "Food and beverage intake that does not support optimal health (2023; moved from Behavioral-Environmental domain).",
-      "etiologies": [
-        {
-          "id": "limited-variety",
-          "label": "食物種類受限",
-          "labelEn": "Limited Variety",
-          "signs": [
-            {
-              "id": "refined-grains-daily",
-              "label": "每日精製穀物",
-              "labelEn": "refined grains daily"
-            },
-            {
-              "id": "low-veg-fruit",
-              "label": "蔬果攝取不足",
-              "labelEn": "low veg fruit"
-            }
-          ]
-        },
-        {
-          "id": "convenience-foods",
-          "label": "依賴便利／外食",
-          "labelEn": "Convenience Foods",
-          "signs": [
-            {
-              "id": "high-sodium-pattern",
-              "label": "高鈉飲食型態",
-              "labelEn": "high sodium pattern"
-            },
-            {
-              "id": "unbalanced-macros",
-              "label": "巨量營養素比例失衡",
-              "labelEn": "unbalanced macros"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-3-1",
-      "code": "NI-3.1",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "液體攝取不足",
-      "labelEn": "Inadequate fluid intake",
-      "definition": "Lower intake of fluid-containing foods or substances compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "fear-incontinence",
-          "label": "擔心失禁而限水",
-          "labelEn": "Fear Incontinence",
-          "signs": [
-            {
-              "id": "fluid-intake-low",
-              "label": "估計液體攝取偏低",
-              "labelEn": "fluid intake low"
-            },
-            {
-              "id": "poor-skin-turgor",
-              "label": "皮膚彈性變差",
-              "labelEn": "poor skin turgor"
-            }
-          ]
-        },
-        {
-          "id": "limited-access-fluids",
-          "label": "取得液體不便",
-          "labelEn": "Limited Access Fluids",
-          "signs": [
-            {
-              "id": "dehydration-signs",
-              "label": "脫水相關徵象",
-              "labelEn": "dehydration signs"
-            },
-            {
-              "id": "intake-below-needs",
-              "label": "液體攝取低於需求",
-              "labelEn": "intake below needs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-3-2",
-      "code": "NI-3.2",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "液體攝取過多",
-      "labelEn": "Excessive fluid intake",
-      "definition": "Higher intake of fluid-containing foods or substances compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "excess-beverages",
-          "label": "飲料攝取過多",
-          "labelEn": "Excess Beverages",
-          "signs": [
-            {
-              "id": "fluid-intake-high",
-              "label": "液體攝取超過需求",
-              "labelEn": "fluid intake high"
-            },
-            {
-              "id": "edema",
-              "label": "水腫",
-              "labelEn": "edema"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-4-3",
-      "code": "NI-4.3",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "酒精攝取過多",
-      "labelEn": "Excessive alcohol intake",
-      "definition": "Alcohol intake that exceeds recommendations based on physiological needs or health status.",
-      "etiologies": [
-        {
-          "id": "social-drinking",
-          "label": "社交飲酒",
-          "labelEn": "Social Drinking",
-          "signs": [
-            {
-              "id": "alcohol-exceeds-guideline",
-              "label": "酒精攝取超過建議",
-              "labelEn": "alcohol exceeds guideline"
-            },
-            {
-              "id": "empty-calories",
-              "label": "空熱量來源增加",
-              "labelEn": "empty calories"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-1",
-      "code": "NI-5.1",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "營養素需求增加",
-      "labelEn": "Increased nutrient needs",
-      "definition": "Requirement for specific nutrients above established reference standards due to physiological or pathological conditions.",
-      "etiologies": [
-        {
-          "id": "wound-healing",
-          "label": "傷口癒合需求",
-          "labelEn": "Wound Healing",
-          "signs": [
-            {
-              "id": "increased-protein-needs",
-              "label": "蛋白質需求增加",
-              "labelEn": "increased protein needs"
-            },
-            {
-              "id": "weight-loss-or-low-intake",
-              "label": "體重下降或攝取不足",
-              "labelEn": "weight loss or low intake"
-            }
-          ]
-        },
-        {
-          "id": "burn-injury",
-          "label": "燒燙傷",
-          "labelEn": "Burn Injury",
-          "signs": [
-            {
-              "id": "hypermetabolism",
-              "label": "代謝亢進",
-              "labelEn": "hypermetabolism"
-            },
-            {
-              "id": "intake-below-needs",
-              "label": "攝取低於需求",
-              "labelEn": "intake below needs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-3",
-      "code": "NI-5.3",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "蛋白質–能量攝取不足",
-      "labelEn": "Inadequate protein-energy intake",
-      "definition": "Lower intake of protein and/or energy compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "early-satiety",
-          "label": "提早飽足感",
-          "labelEn": "Early Satiety",
-          "signs": [
-            {
-              "id": "intake-50pct-needs",
-              "label": "攝取約 50% 需求",
-              "labelEn": "intake 50pct needs"
-            },
-            {
-              "id": "clothes-loose",
-              "label": "衣物變鬆",
-              "labelEn": "clothes loose"
-            }
-          ]
-        },
-        {
-          "id": "poor-appetite",
-          "label": "食慾差",
-          "labelEn": "Poor Appetite",
-          "signs": [
-            {
-              "id": "meal-skipping",
-              "label": "常跳餐",
-              "labelEn": "meal skipping"
-            },
-            {
-              "id": "muscle-wasting",
-              "label": "肌肉消耗",
-              "labelEn": "muscle wasting"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-5-1",
-      "code": "NI-5.5.1",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "脂肪攝取不足",
-      "labelEn": "Inadequate fat intake",
-      "definition": "Lower fat intake compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "fat-restricted-diet-unnecessary",
-          "label": "不必要之低脂飲食",
-          "labelEn": "Fat Restricted Diet Unnecessary",
-          "signs": [
-            {
-              "id": "fat-intake-below-needs",
-              "label": "脂肪攝取低於需求",
-              "labelEn": "fat intake below needs"
-            },
-            {
-              "id": "essential-fatty-acid-risk",
-              "label": "必需脂肪酸不足風險",
-              "labelEn": "essential fatty acid risk"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-5-2",
-      "code": "NI-5.5.2",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "脂肪攝取過多",
-      "labelEn": "Excessive fat intake",
-      "definition": "Higher fat intake compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "high-fat-foods",
-          "label": "高脂食物",
-          "labelEn": "High Fat Foods",
-          "signs": [
-            {
-              "id": "serum-lipids-elevated",
-              "label": "血脂升高",
-              "labelEn": "serum lipids elevated"
-            },
-            {
-              "id": "fat-intake-high",
-              "label": "脂肪攝取偏高",
-              "labelEn": "fat intake high"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-6-1",
-      "code": "NI-5.6.1",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "蛋白質攝取不足",
-      "labelEn": "Inadequate protein intake",
-      "definition": "Lower intake of protein compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "food-aversions",
-          "label": "食物厭惡",
-          "labelEn": "Food Aversions",
-          "signs": [
-            {
-              "id": "protein-intake-low",
-              "label": "蛋白質攝取偏低",
-              "labelEn": "protein intake low"
-            },
-            {
-              "id": "temporal-wasting",
-              "label": "顳部消瘦",
-              "labelEn": "temporal wasting"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-6-2",
-      "code": "NI-5.6.2",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "蛋白質攝取過多",
-      "labelEn": "Excessive protein intake",
-      "definition": "Higher protein intake compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "high-protein-supplements-excess",
-          "label": "過量蛋白補充",
-          "labelEn": "High Protein Supplements Excess",
-          "signs": [
-            {
-              "id": "protein-intake-high",
-              "label": "蛋白質攝取超過需求",
-              "labelEn": "protein intake high"
-            },
-            {
-              "id": "renal-stress",
-              "label": "腎臟負荷增加風險",
-              "labelEn": "renal stress"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-8-1",
-      "code": "NI-5.8.1",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "碳水化合物攝取不足",
-      "labelEn": "Inadequate carbohydrate intake",
-      "definition": "Lower carbohydrate intake compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "carb-restriction",
-          "label": "碳水化合物限制過嚴",
-          "labelEn": "Carb Restriction",
-          "signs": [
-            {
-              "id": "carb-intake-low",
-              "label": "碳水化合物攝取偏低",
-              "labelEn": "carb intake low"
-            },
-            {
-              "id": "hypoglycemia-risk",
-              "label": "低血糖風險",
-              "labelEn": "hypoglycemia risk"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-8-2",
-      "code": "NI-5.8.2",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "碳水化合物攝取過多",
-      "labelEn": "Excessive carbohydrate intake",
-      "definition": "Higher carbohydrate intake compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "knowledge-deficit-carb",
-          "label": "碳水化合物知識不足",
-          "labelEn": "Knowledge Deficit Carb",
-          "signs": [
-            {
-              "id": "hba1c-elevated",
-              "label": "糖化血色素升高",
-              "labelEn": "hba1c elevated"
-            },
-            {
-              "id": "irregular-carb-intake",
-              "label": "醣類攝取不規則",
-              "labelEn": "irregular carb intake"
-            }
-          ]
-        },
-        {
-          "id": "large-portions-starch",
-          "label": "澱粉餐量過大",
-          "labelEn": "Large Portions Starch",
-          "signs": [
-            {
-              "id": "postprandial-glucose-high",
-              "label": "飯後血糖偏高",
-              "labelEn": "postprandial glucose high"
-            },
-            {
-              "id": "carb-intake-high",
-              "label": "碳水化合物攝取過多",
-              "labelEn": "carb intake high"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-8-4",
-      "code": "NI-5.8.4",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "碳水化合物攝取不一致",
-      "labelEn": "Inconsistent carbohydrate intake",
-      "definition": "Carbohydrate intake that varies in timing or amount in a way that interferes with nutrition-related health outcomes.",
-      "etiologies": [
-        {
-          "id": "irregular-meal-timing",
-          "label": "進餐時間不規則",
-          "labelEn": "Irregular Meal Timing",
-          "signs": [
-            {
-              "id": "glycemic-variability",
-              "label": "血糖波動大",
-              "labelEn": "glycemic variability"
-            },
-            {
-              "id": "skipped-meals",
-              "label": "常跳餐",
-              "labelEn": "skipped meals"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-8-5",
-      "code": "NI-5.8.5",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "膳食纖維攝取不足",
-      "labelEn": "Inadequate fiber intake",
-      "definition": "Lower fiber intake compared to established reference standards or recommendations based on physiological needs.",
-      "etiologies": [
-        {
-          "id": "limited-high-fiber-foods",
-          "label": "高纖食物取得有限",
-          "labelEn": "Limited High Fiber Foods",
-          "signs": [
-            {
-              "id": "refined-grains-daily",
-              "label": "每日精製穀物",
-              "labelEn": "refined grains daily"
-            },
-            {
-              "id": "veg-under-2-servings",
-              "label": "蔬菜 <2 份／週",
-              "labelEn": "veg under 2 servings"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-10-2",
-      "code": "NI-5.10.2",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "礦物質攝取過多",
-      "labelEn": "Excessive mineral intake",
-      "definition": "Higher mineral intake compared to established reference standards (e.g., sodium).",
-      "etiologies": [
-        {
-          "id": "reliance-fast-food",
-          "label": "依賴速食／外食",
-          "labelEn": "Reliance Fast Food",
-          "signs": [
-            {
-              "id": "sodium-intake-high",
-              "label": "鈉攝取過高",
-              "labelEn": "sodium intake high"
-            },
-            {
-              "id": "ankle-edema",
-              "label": "踝部水腫",
-              "labelEn": "ankle edema"
-            },
-            {
-              "id": "bp-elevated",
-              "label": "血壓偏高",
-              "labelEn": "bp elevated"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-2",
-      "code": "NI-5.2",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "營養不良（營養不足）",
-      "labelEn": "Malnutrition (undernutrition)",
-      "definition": "Inadequate intake of protein and/or energy, over a period of time, sufficient to negatively impact growth/development, and/or to result in loss of fat and/or muscle stores.",
-      "etiologies": [
-        {
-          "id": "inadequate-intake-prolonged",
-          "label": "長期攝取不足",
-          "labelEn": "Inadequate Intake Prolonged",
-          "signs": [
-            {
-              "id": "muscle-loss",
-              "label": "肌肉流失",
-              "labelEn": "muscle loss"
-            },
-            {
-              "id": "subcutaneous-fat-loss",
-              "label": "皮下脂肪減少",
-              "labelEn": "subcutaneous fat loss"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-2-1",
-      "code": "NI-5.2.1",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "飢餓相關營養不良",
-      "labelEn": "Starvation related malnutrition",
-      "definition": "Inadequate intake of protein and/or energy over a period of time sufficient to result in loss of fat and/or muscle mass without apparent inflammation and in environmental and/or social circumstances.",
-      "etiologies": [
-        {
-          "id": "depression",
-          "label": "憂鬱",
-          "labelEn": "Depression",
-          "signs": [
-            {
-              "id": "weight-loss-30pct-year",
-              "label": "一年體重下降 ≥30%",
-              "labelEn": "weight loss 30pct year"
-            },
-            {
-              "id": "meal-skipping-frequent",
-              "label": "經常跳餐",
-              "labelEn": "meal skipping frequent"
-            }
-          ]
-        },
-        {
-          "id": "food-insecurity",
-          "label": "食物不安全",
-          "labelEn": "Food Insecurity",
-          "signs": [
-            {
-              "id": "muscle-loss",
-              "label": "肌肉流失",
-              "labelEn": "muscle loss"
-            },
-            {
-              "id": "intake-inadequate",
-              "label": "攝取長期不足",
-              "labelEn": "intake inadequate"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-2-2",
-      "code": "NI-5.2.2",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "慢性疾病相關營養不良",
-      "labelEn": "Chronic disease or condition related malnutrition",
-      "definition": "Inadequate intake of protein and/or energy over a period of time sufficient to result in loss of fat and/or muscle mass with mild to moderate inflammation in the context of chronic illness.",
-      "etiologies": [
-        {
-          "id": "chronic-illness",
-          "label": "慢性疾病",
-          "labelEn": "Chronic Illness",
-          "signs": [
-            {
-              "id": "weight-loss-5pct-month",
-              "label": "一個月體重下降 ≥5%",
-              "labelEn": "weight loss 5pct month"
-            },
-            {
-              "id": "intake-under-75pct",
-              "label": "能量攝取 <75% 需求",
-              "labelEn": "intake under 75pct"
-            }
-          ]
-        },
-        {
-          "id": "cancer",
-          "label": "癌症",
-          "labelEn": "Cancer",
-          "signs": [
-            {
-              "id": "inflammation-mild-moderate",
-              "label": "輕中度發炎",
-              "labelEn": "inflammation mild moderate"
-            },
-            {
-              "id": "fat-muscle-loss",
-              "label": "脂肪／肌肉流失",
-              "labelEn": "fat muscle loss"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-2-3",
-      "code": "NI-5.2.3",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "急性疾病或傷害相關營養不良",
-      "labelEn": "Acute disease or injury related malnutrition",
-      "definition": "Inadequate intake of protein and/or energy resulting in loss of fat and/or muscle mass with marked inflammatory response in the context of acute illness or injury.",
-      "etiologies": [
-        {
-          "id": "increased-energy-needs",
-          "label": "能量需求增加",
-          "labelEn": "Increased Energy Needs",
-          "signs": [
-            {
-              "id": "large-wound-burn",
-              "label": "大面積傷口／燒傷",
-              "labelEn": "large wound burn"
-            },
-            {
-              "id": "intake-under-25pct",
-              "label": "進食 <25%",
-              "labelEn": "intake under 25pct"
-            },
-            {
-              "id": "edema",
-              "label": "水腫",
-              "labelEn": "edema"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-2-4",
-      "code": "NI-5.2.4",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "非疾病相關兒科營養不良",
-      "labelEn": "Non illness related pediatric malnutrition",
-      "definition": "Inadequate nutrient intake due to environmental or behavioral factors which may negatively affect growth, development, and/or other outcomes.",
-      "etiologies": [
-        {
-          "id": "food-insecurity",
-          "label": "食物不安全",
-          "labelEn": "Food Insecurity",
-          "signs": [
-            {
-              "id": "growth-faltering",
-              "label": "生長遲緩",
-              "labelEn": "growth faltering"
-            },
-            {
-              "id": "weight-for-age-low",
-              "label": "年齡別體重偏低",
-              "labelEn": "weight for age low"
-            }
-          ]
-        },
-        {
-          "id": "picky-eating",
-          "label": "挑食",
-          "labelEn": "Picky Eating",
-          "signs": [
-            {
-              "id": "limited-food-variety",
-              "label": "食物多樣性不足",
-              "labelEn": "limited food variety"
-            },
-            {
-              "id": "intake-inadequate",
-              "label": "攝取不足",
-              "labelEn": "intake inadequate"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "ni-5-2-5",
-      "code": "NI-5.2.5",
-      "domain": "NI",
-      "domainLabel": "攝取",
-      "label": "疾病相關兒科營養不良",
-      "labelEn": "Illness related pediatric malnutrition",
-      "definition": "Nutrient deficit or imbalance due to disease or injury which may negatively affect growth, development, and/or other outcomes.",
-      "etiologies": [
-        {
-          "id": "chronic-pediatric-illness",
-          "label": "兒科慢性疾病",
-          "labelEn": "Chronic Pediatric Illness",
-          "signs": [
-            {
-              "id": "growth-chart-decline",
-              "label": "生長曲線下滑",
-              "labelEn": "growth chart decline"
-            },
-            {
-              "id": "intake-below-needs",
-              "label": "攝取低於需求",
-              "labelEn": "intake below needs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-1-1",
-      "code": "NC-1.1",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "吞嚥困難",
-      "labelEn": "Swallowing difficulty",
-      "definition": "Impaired or difficult movement of food and liquid within the oral cavity to the stomach.",
-      "etiologies": [
-        {
-          "id": "neurologic-disorder",
-          "label": "神經肌肉疾病",
-          "labelEn": "Neurologic Disorder",
-          "signs": [
-            {
-              "id": "aspiration-risk",
-              "label": "吸入風險",
-              "labelEn": "aspiration risk"
-            },
-            {
-              "id": "meals-under-25pct",
-              "label": "進食量 <25%",
-              "labelEn": "meals under 25pct"
-            }
-          ]
-        },
-        {
-          "id": "post-stroke",
-          "label": "中風後",
-          "labelEn": "Post Stroke",
-          "signs": [
-            {
-              "id": "prolonged-meal-time",
-              "label": "進餐時間延長",
-              "labelEn": "prolonged meal time"
-            },
-            {
-              "id": "coughing-with-meals",
-              "label": "進食時咳嗽",
-              "labelEn": "coughing with meals"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-1-2",
-      "code": "NC-1.2",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "咀嚼困難",
-      "labelEn": "Difficulty chewing",
-      "definition": "Impaired ability to chew food (2023; replaces biting/chewing difficulty).",
-      "etiologies": [
-        {
-          "id": "oral-pain",
-          "label": "口腔疼痛",
-          "labelEn": "Oral Pain",
-          "signs": [
-            {
-              "id": "avoids-solid-foods",
-              "label": "避開固體食物",
-              "labelEn": "avoids solid foods"
-            },
-            {
-              "id": "soft-diet-only",
-              "label": "僅能軟質飲食",
-              "labelEn": "soft diet only"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-1-4",
-      "code": "NC-1.4",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "胃腸功能改變",
-      "labelEn": "Altered GI function",
-      "definition": "Change in gastrointestinal function that interferes with or prevents desired nutritional consequences.",
-      "etiologies": [
-        {
-          "id": "gi-disorder",
-          "label": "胃腸疾病",
-          "labelEn": "Gi Disorder",
-          "signs": [
-            {
-              "id": "nausea-bloating",
-              "label": "噁心／脹氣",
-              "labelEn": "nausea bloating"
-            },
-            {
-              "id": "early-satiety",
-              "label": "提早飽足感",
-              "labelEn": "early satiety"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-1-6",
-      "code": "NC-1.6",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "肌少症",
-      "labelEn": "Sarcopenia",
-      "definition": "Loss of skeletal muscle mass and function (2023 new diagnosis).",
-      "etiologies": [
-        {
-          "id": "low-protein-intake",
-          "label": "蛋白質攝取不足",
-          "labelEn": "Low Protein Intake",
-          "signs": [
-            {
-              "id": "protein-below-target",
-              "label": "蛋白質低於目標",
-              "labelEn": "protein below target"
-            },
-            {
-              "id": "muscle-mass-low",
-              "label": "肌肉量偏低",
-              "labelEn": "muscle mass low"
-            }
-          ]
-        },
-        {
-          "id": "physical-inactivity",
-          "label": "身體活動不足",
-          "labelEn": "Physical Inactivity",
-          "signs": [
-            {
-              "id": "grip-strength-low",
-              "label": "握力下降",
-              "labelEn": "grip strength low"
-            },
-            {
-              "id": "steps-low",
-              "label": "步數偏低",
-              "labelEn": "steps low"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-2-1",
-      "code": "NC-2.1",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "營養素利用障礙",
-      "labelEn": "Impaired nutrient utilization",
-      "definition": "Change in capacity to metabolize nutrients as a result of medications, surgery, or pathophysiology.",
-      "etiologies": [
-        {
-          "id": "malabsorption",
-          "label": "吸收不良",
-          "labelEn": "Malabsorption",
-          "signs": [
-            {
-              "id": "weight-loss",
-              "label": "體重下降",
-              "labelEn": "weight loss"
-            },
-            {
-              "id": "nutrient-labs-abnormal",
-              "label": "營養相關檢驗異常",
-              "labelEn": "nutrient labs abnormal"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-2-2",
-      "code": "NC-2.2",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "營養相關檢驗值異常",
-      "labelEn": "Altered nutrition-related laboratory values",
-      "definition": "Laboratory values indicating altered nutrition status (specify lab).",
-      "etiologies": [
-        {
-          "id": "diabetes-mellitus",
-          "label": "糖尿病",
-          "labelEn": "Diabetes Mellitus",
-          "signs": [
-            {
-              "id": "fasting-glucose-high",
-              "label": "空腹血糖偏高",
-              "labelEn": "fasting glucose high"
-            },
-            {
-              "id": "hba1c-elevated",
-              "label": "糖化血色素升高",
-              "labelEn": "hba1c elevated"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-2-3",
-      "code": "NC-2.3",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "食物–藥物交互作用",
-      "labelEn": "Food-medication interaction",
-      "definition": "Actual or potential interaction between food and medication affecting nutrition outcomes.",
-      "etiologies": [
-        {
-          "id": "grapefruit-statin",
-          "label": "葡萄柚與 statin 交互",
-          "labelEn": "Grapefruit Statin",
-          "signs": [
-            {
-              "id": "medication-counseling-needed",
-              "label": "需藥食衛教",
-              "labelEn": "medication counseling needed"
-            },
-            {
-              "id": "diet-nonadherence-risk",
-              "label": "飲食遵從風險",
-              "labelEn": "diet nonadherence risk"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-3-1",
-      "code": "NC-3.1",
-      "domain": "NC",
-      "domainLabel": "臨床",
+      "id": "underweight",
       "label": "體重過輕",
       "labelEn": "Underweight",
-      "definition": "Body weight below established reference standards or recommendations.",
+      "definition": "成人：BMI < 18.5 kg/m²\n2~18 歲：BMI ≤ 各年齡層第 15 百分位",
+      "page": 8,
+      "domain": "anthropometrics",
       "etiologies": [
         {
-          "id": "inadequate-intake",
-          "label": "攝取不足",
-          "labelEn": "Inadequate Intake",
-          "signs": [
+          "id": "incorrect-food-nutrition-beliefs",
+          "label": "照顧者或個案本身對食物及營養相關議題有錯誤認知及態度"
+        },
+        {
+          "id": "inadequate-energy-intake",
+          "label": "熱量攝取不足"
+        },
+        {
+          "id": "increased-energy-needs",
+          "label": "熱量需求增加"
+        },
+        {
+          "id": "excessive-activity",
+          "label": "活動量過大"
+        },
+        {
+          "id": "food-taboos-or-restrictions",
+          "label": "食物攝取禁忌或限制"
+        },
+        {
+          "id": "eating-disorder",
+          "label": "飲食失調"
+        },
+        {
+          "id": "environmental-or-economic-factors",
+          "label": "環境或經濟因素"
+        },
+        {
+          "id": "fetal-growth-restriction",
+          "label": "胎兒體重小於妊娠週數、子宮內生長遲緩／受限、或每日體重增加不足"
+        }
+      ],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": [
             {
-              "id": "bmi-low",
-              "label": "BMI 過低",
-              "labelEn": "bmi low"
+              "id": "bmi-adult-under-18-5",
+              "label": "BMI < 18.5 kg/m²（成人）"
+            },
+            {
+              "id": "decreased-skinfold-and-mamc",
+              "label": "皮下脂肪厚度、中臂肌肉圍減少"
+            },
+            {
+              "id": "age-birth-to-2",
+              "label": "出生–2 歲",
+              "details": [
+                "體重 < 各年齡層第 5 百分位",
+                "重高指數 < 各年齡層第 5 百分位（備註：針對臥姿身長生長曲線圖，適合 36 個月以下嬰幼兒。若量測兒童站姿身高，使用 2–20 歲 BMI 表）"
+              ]
+            },
+            {
+              "id": "age-2-to-20",
+              "label": "2–20 歲",
+              "details": [
+                "體重 < 各年齡層第 5 百分位",
+                "BMI < 各年齡層第 5 百分位",
+                "體重與身高比值 < 各年齡層第 5 百分位"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "nfpe",
+          "items": [
+            {
+              "id": "thinness-low-body-fat",
+              "label": "體瘦、缺乏體脂肪"
             },
             {
               "id": "muscle-wasting",
-              "label": "肌肉消耗",
-              "labelEn": "muscle wasting"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-3-2",
-      "code": "NC-3.2",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "非刻意體重下降",
-      "labelEn": "Unintended weight loss",
-      "definition": "Decrease in body weight that is not planned or desired.",
-      "etiologies": [
-        {
-          "id": "early-satiety",
-          "label": "提早飽足感",
-          "labelEn": "Early Satiety",
-          "signs": [
-            {
-              "id": "intake-50pct-needs",
-              "label": "攝取約 50% 需求",
-              "labelEn": "intake 50pct needs"
-            },
-            {
-              "id": "clothes-loose",
-              "label": "衣物變鬆",
-              "labelEn": "clothes loose"
+              "label": "肌肉變少（臀部及顳肌耗損）"
             }
           ]
         },
         {
-          "id": "hypermetabolism",
-          "label": "代謝亢進",
-          "labelEn": "Hypermetabolism",
-          "signs": [
+          "id": "food_nutrition_history",
+          "items": [
             {
-              "id": "weight-loss-unintended",
-              "label": "非刻意體重下降",
-              "labelEn": "weight loss unintended"
+              "id": "intake-below-reference",
+              "label": "食物攝取量較既定參考標準或個人生理需求的建議量低"
             },
             {
-              "id": "increased-needs",
-              "label": "需求增加",
-              "labelEn": "increased needs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-3-3",
-      "code": "NC-3.3",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "過重／肥胖",
-      "labelEn": "Overweight/obesity",
-      "definition": "Increased adiposity compared to established reference standards, ranging from overweight to obesity.",
-      "etiologies": [
-        {
-          "id": "physical-inactivity",
-          "label": "身體活動不足",
-          "labelEn": "Physical Inactivity",
-          "signs": [
-            {
-              "id": "steps-low",
-              "label": "步數偏低",
-              "labelEn": "steps low"
+              "id": "inadequate-food-supply",
+              "label": "食物供應不足"
             },
             {
-              "id": "bmi-elevated",
-              "label": "BMI 升高",
-              "labelEn": "bmi elevated"
-            }
-          ]
-        },
-        {
-          "id": "excessive-energy-intake",
-          "label": "能量攝取過多",
-          "labelEn": "Excessive Energy Intake",
-          "signs": [
-            {
-              "id": "weight-gain",
-              "label": "體重增加",
-              "labelEn": "weight gain"
+              "id": "dieting-or-fad-diets",
+              "label": "節食、不良的飲食流行時尚"
             },
             {
-              "id": "portion-large",
-              "label": "餐量過大",
-              "labelEn": "portion large"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nc-3-4",
-      "code": "NC-3.4",
-      "domain": "NC",
-      "domainLabel": "臨床",
-      "label": "非刻意體重增加",
-      "labelEn": "Unintended weight gain",
-      "definition": "Increase in body weight that is not planned or desired.",
-      "etiologies": [
-        {
-          "id": "physical-inactivity",
-          "label": "身體活動不足",
-          "labelEn": "Physical Inactivity",
-          "signs": [
-            {
-              "id": "activity-decreased",
-              "label": "活動量減少",
-              "labelEn": "activity decreased"
+              "id": "prolonged-starvation",
+              "label": "長期飢餓"
             },
-            {
-              "id": "weight-gain-6pct",
-              "label": "體重增加 ≥6%",
-              "labelEn": "weight gain 6pct"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nb-1-1",
-      "code": "NB-1.1",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "食物與營養相關知識不足",
-      "labelEn": "Food and nutrition related knowledge deficit",
-      "definition": "Incomplete or inaccurate knowledge about food, nutrition, or nutrition-related information and guidelines.",
-      "etiologies": [
-        {
-          "id": "limited-prior-education",
-          "label": "過去營養衛教有限",
-          "labelEn": "Limited Prior Education",
-          "signs": [
-            {
-              "id": "patient-quote-knowledge-gap",
-              "label": "個案自述認知不足",
-              "labelEn": "patient quote knowledge gap"
-            },
-            {
-              "id": "incorrect-beliefs",
-              "label": "錯誤飲食觀念",
-              "labelEn": "incorrect beliefs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nb-1-3",
-      "code": "NB-1.3",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "尚未準備好進行營養相關行為改變",
-      "labelEn": "Not ready for nutrition related behavior change",
-      "definition": "Lack of readiness to change food or nutrition-related behaviors (2023 label).",
-      "etiologies": [
-        {
-          "id": "time-constraints-perceived",
-          "label": "自覺時間不足",
-          "labelEn": "Time Constraints Perceived",
-          "signs": [
-            {
-              "id": "states-no-time-healthy-eating",
-              "label": "自述無法健康飲食",
-              "labelEn": "states no time healthy eating"
-            },
-            {
-              "id": "takeout-frequent",
-              "label": "常外帶",
-              "labelEn": "takeout frequent"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nb-1-4",
-      "code": "NB-1.4",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "自我監測能力不足",
-      "labelEn": "Self-monitoring deficit",
-      "definition": "Inability or limited ability to monitor food, nutrition, or related health parameters.",
-      "etiologies": [
-        {
-          "id": "no-glucometer-training",
-          "label": "未接受血糖機教學",
-          "labelEn": "No Glucometer Training",
-          "signs": [
-            {
-              "id": "unopened-glucometer",
-              "label": "血糖機未開封",
-              "labelEn": "unopened glucometer"
-            },
-            {
-              "id": "blank-logs",
-              "label": "監測紀錄空白",
-              "labelEn": "blank logs"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nb-1-5",
-      "code": "NB-1.5",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "紊亂飲食型態",
-      "labelEn": "Disordered eating pattern",
-      "definition": "Eating pattern that interferes with optimal nutrition and health.",
-      "etiologies": [
-        {
-          "id": "binge-restrict-cycle",
-          "label": "暴食–限制循環",
-          "labelEn": "Binge Restrict Cycle",
-          "signs": [
-            {
-              "id": "loss-of-control",
-              "label": "進食失控",
-              "labelEn": "loss of control"
-            },
-            {
-              "id": "weight-fluctuation",
-              "label": "體重波動",
-              "labelEn": "weight fluctuation"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nb-1-6",
-      "code": "NB-1.6",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "營養建議遵從性不足",
-      "labelEn": "Limited adherence to nutrition-related recommendations",
-      "definition": "Difficulty following agreed-upon nutrition recommendations.",
-      "etiologies": [
-        {
-          "id": "cognitive-deficit",
-          "label": "認知功能不足",
-          "labelEn": "Cognitive Deficit",
-          "signs": [
-            {
-              "id": "cannot-teach-back",
-              "label": "無法教回衛教內容",
-              "labelEn": "cannot teach back"
-            },
-            {
-              "id": "plate-method-not-used",
-              "label": "未使用餐盤法",
-              "labelEn": "plate method not used"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "nb-1-7",
-      "code": "NB-1.7",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "食物接受度有限",
-      "labelEn": "Limited food acceptance",
-      "definition": "Limited willingness or ability to accept appropriate foods (2023; moved to Behavioral-Environmental).",
-      "etiologies": [
-        {
-          "id": "nausea-aversions",
-          "label": "噁心／食物厭惡",
-          "labelEn": "Nausea Aversions",
-          "signs": [
             {
               "id": "food-refusal",
-              "label": "拒食",
-              "labelEn": "food refusal"
+              "label": "拒絕進食"
             },
             {
-              "id": "frustration-with-eating",
-              "label": "對進食感到挫折",
-              "labelEn": "frustration with eating"
+              "id": "activity-above-recommended",
+              "label": "活動量大於建議的活動量"
+            },
+            {
+              "id": "appetite-affecting-drugs",
+              "label": "使用影響食慾的藥物"
+            }
+          ]
+        },
+        {
+          "id": "client_history",
+          "items": [
+            {
+              "id": "malnutrition-micronutrient-deficiency",
+              "label": "營養不良，維生素、礦物質缺乏"
+            },
+            {
+              "id": "disease-or-disability",
+              "label": "有疾病或身心殘障"
+            },
+            {
+              "id": "mental-disorder-or-dementia",
+              "label": "有精神障礙或失智疾病"
+            },
+            {
+              "id": "hypermetabolism",
+              "label": "新陳代謝速率過高"
+            },
+            {
+              "id": "dancer-or-gymnast",
+              "label": "舞蹈、體操等運動員"
+            },
+            {
+              "id": "neglected-child",
+              "label": "照顧不當之幼兒",
+              "details": [
+                "包括：父母觀念不正確、無人妥善照顧等因素"
+              ]
+            },
+            {
+              "id": "food-preferences",
+              "label": "有飲食偏好"
             }
           ]
         }
       ]
     },
     {
-      "id": "nb-1-8",
-      "code": "NB-1.8",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "食物與營養相關技能不足",
-      "labelEn": "Limited food and nutrition related skill",
-      "definition": "Limited practical skills for food selection, preparation, or nutrition self-management (2023 new).",
-      "etiologies": [
+      "id": "overweight",
+      "label": "體重過重",
+      "labelEn": "Overweight",
+      "page": 11,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "limited-cooking-skills",
-          "label": "烹調技能不足",
-          "labelEn": "Limited Cooking Skills",
-          "signs": [
-            {
-              "id": "relies-takeout",
-              "label": "依賴外食",
-              "labelEn": "relies takeout"
-            },
-            {
-              "id": "cannot-follow-recipe",
-              "label": "無法依食譜備餐",
-              "labelEn": "cannot follow recipe"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-1-9",
-      "code": "NB-1.9",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "阻礙飲食／營養行為改變之信念",
-      "labelEn": "Belief finding that hinders food and/or nutrition behavior change",
-      "definition": "Beliefs that hinder adoption of recommended food or nutrition behaviors (2023).",
-      "etiologies": [
+      "id": "mild-obesity",
+      "label": "輕度肥胖",
+      "labelEn": "Mild obesity",
+      "page": 11,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "unsupported-belief-fad-diet",
-          "label": "不支持之飲食信念",
-          "labelEn": "Unsupported Belief Fad Diet",
-          "signs": [
-            {
-              "id": "restricts-food-groups",
-              "label": "不必要限制食物類別",
-              "labelEn": "restricts food groups"
-            },
-            {
-              "id": "resists-recommendation",
-              "label": "抗拒建議",
-              "labelEn": "resists recommendation"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-1-10",
-      "code": "NB-1.10",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "阻礙飲食／營養行為改變之態度",
-      "labelEn": "Attitude finding that hinders food and/or nutrition behavior change",
-      "definition": "Attitudes that hinder adoption of recommended food or nutrition behaviors (2023).",
-      "etiologies": [
+      "id": "moderate-obesity",
+      "label": "中度肥胖",
+      "labelEn": "Moderate obesity",
+      "page": 11,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "negative-attitude-change",
-          "label": "對改變持負向態度",
-          "labelEn": "Negative Attitude Change",
-          "signs": [
-            {
-              "id": "states-change-futile",
-              "label": "自述改變無用",
-              "labelEn": "states change futile"
-            },
-            {
-              "id": "low-motivation",
-              "label": "動機低",
-              "labelEn": "low motivation"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-2-1",
-      "code": "NB-2.1",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "身體活動不足",
-      "labelEn": "Physical inactivity",
-      "definition": "Physical activity below recommendations for health.",
-      "etiologies": [
+      "id": "severe-obesity",
+      "label": "重度肥胖",
+      "labelEn": "Severe obesity",
+      "page": 11,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "knowledge-deficit-activity",
-          "label": "活動益處知識不足",
-          "labelEn": "Knowledge Deficit Activity",
-          "signs": [
-            {
-              "id": "no-structured-activity",
-              "label": "無規律活動",
-              "labelEn": "no structured activity"
-            },
-            {
-              "id": "sedentary-time-high",
-              "label": "久坐時間長",
-              "labelEn": "sedentary time high"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-2-3",
-      "code": "NB-2.3",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "無法或不願自我照護",
-      "labelEn": "Inability or lack of desire to manage self-care",
-      "definition": "Inability or lack of desire to perform nutrition-related self-care.",
-      "etiologies": [
+      "id": "morbid-obesity",
+      "label": "病態性肥胖",
+      "labelEn": "Morbid obesity",
+      "page": 11,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "fatigue",
-          "label": "疲倦",
-          "labelEn": "Fatigue",
-          "signs": [
-            {
-              "id": "meal-skipping",
-              "label": "常跳餐",
-              "labelEn": "meal skipping"
-            },
-            {
-              "id": "intake-decreased",
-              "label": "整體攝取下降",
-              "labelEn": "intake decreased"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-2-4",
-      "code": "NB-2.4",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "備餐能力有限",
-      "labelEn": "Limited ability to prepare food for eating",
-      "definition": "Limited ability to prepare food for consumption (2023 label).",
-      "etiologies": [
+      "id": "abdominal-obesity",
+      "label": "腹部肥胖",
+      "labelEn": "Abdominal obesity",
+      "page": 11,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "fatigue",
-          "label": "疲倦",
-          "labelEn": "Fatigue",
-          "signs": [
-            {
-              "id": "meal-skipping",
-              "label": "常跳餐",
-              "labelEn": "meal skipping"
-            },
-            {
-              "id": "relies-others-meals",
-              "label": "依賴他人備餐",
-              "labelEn": "relies others meals"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-2-5",
-      "code": "NB-2.5",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "食物／營養生活品質不佳",
-      "labelEn": "Poor food and/or nutrition quality of life",
-      "definition": "Self-reported poor quality of life related to food or nutrition.",
-      "etiologies": [
+      "id": "excessive-body-fat-percent",
+      "label": "體脂肪百分比過高",
+      "labelEn": "Excessive percentage of body fat",
+      "page": 11,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "gi-symptoms",
-          "label": "腸胃症狀",
-          "labelEn": "Gi Symptoms",
-          "signs": [
-            {
-              "id": "reports-poor-qol-eating",
-              "label": "自述進食生活品質差",
-              "labelEn": "reports poor qol eating"
-            },
-            {
-              "id": "avoids-social-meals",
-              "label": "避免社交進餐",
-              "labelEn": "avoids social meals"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-2-6",
-      "code": "NB-2.6",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "自行進食困難",
-      "labelEn": "Self-feeding difficulty",
-      "definition": "Difficulty feeding oneself independently.",
-      "etiologies": [
+      "id": "normal-body-weight",
+      "label": "體位正常",
+      "labelEn": "Body weight in normal range",
+      "page": 14,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "weakness-hands",
-          "label": "手部無力",
-          "labelEn": "Weakness Hands",
-          "signs": [
-            {
-              "id": "needs-feeding-assist",
-              "label": "需他人協助進食",
-              "labelEn": "needs feeding assist"
-            },
-            {
-              "id": "meal-time-prolonged",
-              "label": "進餐時間過長",
-              "labelEn": "meal time prolonged"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-3-1",
-      "code": "NB-3.1",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "攝取不安全食物",
-      "labelEn": "Intake of unsafe food",
-      "definition": "Consumption of food that poses safety risk.",
-      "etiologies": [
+      "id": "significant-weight-loss",
+      "label": "明顯的體重減輕",
+      "labelEn": "Significant weight loss",
+      "page": 15,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "improper-food-storage",
-          "label": "食物儲存不當",
-          "labelEn": "Improper Food Storage",
-          "signs": [
-            {
-              "id": "reports-gi-illness",
-              "label": "自述腸胃不適",
-              "labelEn": "reports gi illness"
-            },
-            {
-              "id": "unsafe-food-practices",
-              "label": "不安全食物處理",
-              "labelEn": "unsafe food practices"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     },
     {
-      "id": "nb-3-2",
-      "code": "NB-3.2",
-      "domain": "NB",
-      "domainLabel": "行為－環境",
-      "label": "食物不安全",
-      "labelEn": "Food insecurity",
-      "definition": "Uncertain, limited, or unstable access to adequate, safe, culturally acceptable food (2023; relabeled from limited access to food).",
-      "etiologies": [
+      "id": "severe-weight-loss",
+      "label": "嚴重的體重減輕",
+      "labelEn": "Severe weight loss",
+      "page": 15,
+      "domain": "anthropometrics",
+      "etiologies": [],
+      "signs": [
         {
-          "id": "financial-constraints",
-          "label": "經濟因素",
-          "labelEn": "Financial Constraints",
-          "signs": [
-            {
-              "id": "skips-meals-cost",
-              "label": "因成本跳餐",
-              "labelEn": "skips meals cost"
-            },
-            {
-              "id": "food-pantry-reliance",
-              "label": "依賴食物銀行",
-              "labelEn": "food pantry reliance"
-            }
-          ]
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "mild-pem",
+      "label": "輕度蛋白質-熱量營養不良",
+      "labelEn": "Mild PEM",
+      "page": 17,
+      "domain": "nutritional-status",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "moderate-pem",
+      "label": "中度蛋白質-熱量營養不良",
+      "labelEn": "Moderate PEM",
+      "page": 20,
+      "domain": "nutritional-status",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "severe-pem",
+      "label": "重度蛋白質-熱量營養不良",
+      "labelEn": "Severe PEM",
+      "page": 23,
+      "domain": "nutritional-status",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "kwashiorkor",
+      "label": "夸西柯病",
+      "labelEn": "Kwashiorkor",
+      "page": 25,
+      "domain": "nutritional-status",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "marasmus",
+      "label": "消瘦症",
+      "labelEn": "Marasmus",
+      "page": 27,
+      "domain": "nutritional-status",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-caloric-intake",
+      "label": "熱量攝取過多",
+      "labelEn": "Excessive caloric intake",
+      "page": 29,
+      "domain": "energy-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "adequate-caloric-intake",
+      "label": "熱量攝取足夠",
+      "labelEn": "Adequate caloric intake",
+      "page": 31,
+      "domain": "energy-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-caloric-intake",
+      "label": "熱量攝取不足",
+      "labelEn": "Inadequate caloric intake",
+      "page": 32,
+      "domain": "energy-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "extreme-energy-restriction",
+      "label": "極度熱量限制",
+      "labelEn": "Extreme energy restriction",
+      "page": 34,
+      "domain": "energy-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-carbohydrate-intake",
+      "label": "碳水化合物攝取過多",
+      "labelEn": "Excessive carbohydrate intake",
+      "page": 35,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-carbohydrate-intake",
+      "label": "碳水化合物攝取偏低",
+      "labelEn": "Inadequate carbohydrate intake",
+      "page": 37,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-sugar-intake",
+      "label": "精製糖攝取過多",
+      "labelEn": "Excessive sugar intake",
+      "page": 39,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-total-fat-intake",
+      "label": "脂肪攝取過多",
+      "labelEn": "Excessive total fat intake",
+      "page": 40,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-total-fat-intake",
+      "label": "脂肪攝取偏低",
+      "labelEn": "Inadequate total fat intake",
+      "page": 42,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-sfa-intake",
+      "label": "飽和脂肪酸攝取過多",
+      "labelEn": "Excessive SFA intake",
+      "page": 44,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-pufa-intake",
+      "label": "多元不飽和脂肪酸攝取過多",
+      "labelEn": "Excessive PUFA intake",
+      "page": 45,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-mufa-intake",
+      "label": "單元不飽和脂肪酸攝取過多",
+      "labelEn": "Excessive MUFA intake",
+      "page": 46,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "low-carb-high-fat-intake",
+      "label": "低碳水化合物高脂肪攝取",
+      "labelEn": "Low carbohydrate, high fat intake",
+      "page": 47,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-protein-intake",
+      "label": "蛋白質攝取過多",
+      "labelEn": "Excessive protein intake",
+      "page": 48,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-protein-intake",
+      "label": "蛋白質攝取偏低",
+      "labelEn": "Inadequate protein intake",
+      "page": 50,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-hbv-protein-intake",
+      "label": "高生理價蛋白質攝取不足",
+      "labelEn": "Inadequate HBV protein intake",
+      "page": 52,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-fiber-intake",
+      "label": "膳食纖維攝取過多",
+      "labelEn": "Excessive dietary fiber intake",
+      "page": 53,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-fiber-intake",
+      "label": "膳食纖維攝取不足",
+      "labelEn": "Inadequate dietary fiber intake",
+      "page": 55,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-cholesterol-intake",
+      "label": "膽固醇攝取過多",
+      "labelEn": "Excessive cholesterol intake",
+      "page": 57,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-mineral-intake",
+      "label": "礦物質攝取過多",
+      "labelEn": "Excessive mineral intake",
+      "page": 58,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-mineral-intake",
+      "label": "礦物質攝取偏低",
+      "labelEn": "Inadequate mineral intake",
+      "page": 61,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-vitamin-intake",
+      "label": "維生素攝取過多",
+      "labelEn": "Excessive vitamin intake",
+      "page": 64,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-vitamin-intake",
+      "label": "維生素攝取偏低",
+      "labelEn": "Inadequate vitamin intake",
+      "page": 66,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-fluid-intake",
+      "label": "水份攝取過多",
+      "labelEn": "Excessive fluid intake",
+      "page": 69,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-fluid-intake",
+      "label": "水分攝取不足",
+      "labelEn": "Inadequate fluid intake",
+      "page": 72,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "imbalance-of-nutrients",
+      "label": "營養素不均衡",
+      "labelEn": "Imbalance of nutrients",
+      "page": 74,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-en-infusion",
+      "label": "腸道營養灌食不足",
+      "labelEn": "Inadequate enteral nutrition infusion",
+      "page": 76,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-en-infusion",
+      "label": "腸道營養灌食過多",
+      "labelEn": "Excessive enteral nutrition infusion",
+      "page": 78,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-pn-infusion",
+      "label": "靜脈營養量不足",
+      "labelEn": "Inadequate parenteral nutrition infusion",
+      "page": 79,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-pn-infusion",
+      "label": "靜脈營養量過多",
+      "labelEn": "Excessive parenteral nutrition infusion",
+      "page": 81,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "food-medication-interaction",
+      "label": "食物與藥物交互作用",
+      "labelEn": "Food-medication interaction",
+      "page": 82,
+      "domain": "nutrient-intake",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "swallowing-difficulty",
+      "label": "吞嚥困難",
+      "labelEn": "Swallowing difficulty",
+      "page": 83,
+      "domain": "physiological",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "masticatory-difficulty",
+      "label": "咀嚼困難",
+      "labelEn": "Masticatory difficulty",
+      "page": 85,
+      "domain": "physiological",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "altered-gi-function",
+      "label": "腸胃道功能改變",
+      "labelEn": "Altered gastrointestinal (GI) function",
+      "page": 87,
+      "domain": "physiological",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "impaired-nutrient-utilization",
+      "label": "營養素利用變差",
+      "labelEn": "Impaired nutrient utilization",
+      "page": 89,
+      "domain": "physiological",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "altered-nutrition-labs",
+      "label": "營養相關生化值改變",
+      "labelEn": "Altered nutrition-related laboratory values",
+      "page": 91,
+      "domain": "physiological",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "breastfeeding-difficulty",
+      "label": "餵食母乳困難",
+      "labelEn": "Breastfeeding difficulty",
+      "page": 93,
+      "domain": "physiological",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "excessive-alcohol-intake",
+      "label": "飲酒過量",
+      "labelEn": "Excessive alcohol intake",
+      "page": 95,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "limited-access-to-food-or-fluid",
+      "label": "獲取食物或水的管道受限",
+      "labelEn": "Limited access to food and/or fluid",
+      "page": 97,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "food-nutrition-knowledge-deficit",
+      "label": "食物與營養的知識缺乏",
+      "labelEn": "Food- and nutrition-related knowledge deficit",
+      "page": 99,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "harmful-food-beliefs",
+      "label": "不適當的營養態度",
+      "labelEn": "Harmful beliefs/attitudes or practices about food, nutrition, and nutrition-related topics",
+      "page": 101,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "not-ready-for-change",
+      "label": "尚未準備好進行飲食或生活型態的改變",
+      "labelEn": "Not ready for diet/lifestyle change",
+      "page": 102,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "self-compliance-deficit",
+      "label": "自我執行能力不足",
+      "labelEn": "Self-compliance deficit",
+      "page": 104,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "limited-adherence",
+      "label": "無法確實執行營養相關建議",
+      "labelEn": "Limited adherence to nutrition-related recommendations",
+      "page": 106,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "undesirable-food-choices",
+      "label": "不適當的食物選擇",
+      "labelEn": "Undesirable food choices",
+      "page": 108,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "inadequate-exercise",
+      "label": "運動不足",
+      "labelEn": "Inadequate exercise",
+      "page": 110,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
+        }
+      ]
+    },
+    {
+      "id": "no-nutrition-problem",
+      "label": "此刻沒有營養相關問題",
+      "labelEn": "Without nutritional related problem recently",
+      "page": 111,
+      "domain": "diet-behavior",
+      "etiologies": [],
+      "signs": [
+        {
+          "id": "biochemical",
+          "items": []
+        },
+        {
+          "id": "anthropometric",
+          "items": []
+        },
+        {
+          "id": "nfpe",
+          "items": []
+        },
+        {
+          "id": "food_nutrition_history",
+          "items": []
+        },
+        {
+          "id": "client_history",
+          "items": []
         }
       ]
     }

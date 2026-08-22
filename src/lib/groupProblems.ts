@@ -1,27 +1,21 @@
 import type { PesCatalog, PesProblem } from "@shared/pes";
 
-const DOMAIN_ORDER = ["NI", "NC", "NB"];
-
 export function groupProblemsByDomain(catalog: PesCatalog) {
   const groups = new Map<string, PesProblem[]>();
   for (const problem of catalog.problems) {
-    const domain = problem.domain ?? "OTHER";
-    const items = groups.get(domain) ?? [];
+    const items = groups.get(problem.domain) ?? [];
     items.push(problem);
-    groups.set(domain, items);
+    groups.set(problem.domain, items);
   }
 
   const orderedIds = [
-    ...DOMAIN_ORDER.filter((id) => groups.has(id)),
-    ...[...groups.keys()].filter((id) => !DOMAIN_ORDER.includes(id)),
+    ...catalog.domains.map((domain) => domain.id).filter((id) => groups.has(id)),
+    ...[...groups.keys()].filter((id) => !catalog.domains.some((domain) => domain.id === id)),
   ];
 
   return orderedIds.map((id) => ({
     id,
-    label:
-      catalog.domains?.find((domain) => domain.id === id)?.label ??
-      catalog.problems.find((problem) => problem.domain === id)?.domainLabel ??
-      id,
+    label: catalog.domains.find((domain) => domain.id === id)?.label ?? id,
     items: groups.get(id) ?? [],
   }));
 }

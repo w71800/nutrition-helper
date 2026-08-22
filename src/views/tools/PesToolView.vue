@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { computed, onMounted, ref } from "vue";
+import { signCategoryLabel } from "@shared/catalog";
+import type { CatalogResponse, PesCatalog } from "@shared/pes";
 import { usePesCascade } from "@/composables/usePesCascade";
 import { fetchPesCatalog } from "@/lib/api";
 import { formatPesForClipboard } from "@/lib/formatPes";
 import { groupProblemsByDomain } from "@/lib/groupProblems";
-import type { CatalogResponse, PesCatalog } from "@shared/pes";
 
 const catalog = ref<PesCatalog | null>(null);
 const source = ref<CatalogResponse["source"] | null>(null);
@@ -17,9 +18,7 @@ const {
   etiologyId,
   signId,
   problem,
-  etiology,
   onProblemChange,
-  onEtiologyChange,
   ready,
   labels,
 } = usePesCascade(catalog);
@@ -30,7 +29,12 @@ const problemsByDomain = computed(() =>
 
 const previewText = computed(() =>
   labels.value
-    ? formatPesForClipboard(labels.value.p, labels.value.e, labels.value.s)
+    ? formatPesForClipboard(
+        labels.value.p,
+        labels.value.e,
+        labels.value.s,
+        labels.value.details,
+      )
     : "",
 );
 
@@ -65,9 +69,6 @@ async function handleCopy() {
       <h1>PES 診斷文本</h1>
       <p class="lede">
         依序選擇 P → E → S，完成後可一鍵複製
-        <span v-if="catalog.meta?.edition" class="meta-inline">
-          · NCPT {{ catalog.meta.edition }}
-        </span>
         <span class="meta-inline">
           · 資料來源 {{ source === "d1" ? "D1 已發布版" : "staged JSON" }}
         </span>
@@ -84,7 +85,7 @@ async function handleCopy() {
             :label="group.label"
           >
             <option v-for="item in group.items" :key="item.id" :value="item.id">
-              {{ item.code ? `${item.code} ` : "" }}{{ item.label }}
+              {{ item.label }}（p.{{ item.page }}）
             </option>
           </optgroup>
         </select>
@@ -94,8 +95,8 @@ async function handleCopy() {
         <span class="field-label">E（病因）</span>
         <select
           :value="etiologyId"
-          :disabled="!problem"
-          @change="onEtiologyChange(($event.target as HTMLSelectElement).value)"
+          :disabled="!problem || problem.etiologies.length === 0"
+          @change="etiologyId = ($event.target as HTMLSelectElement).value"
         >
           <option value="">請選擇</option>
           <option
@@ -112,17 +113,24 @@ async function handleCopy() {
         <span class="field-label">S（徵象）</span>
         <select
           :value="signId"
-          :disabled="!etiology"
+          :disabled="!problem"
           @change="signId = ($event.target as HTMLSelectElement).value"
         >
           <option value="">請選擇</option>
-          <option
-            v-for="item in etiology?.signs ?? []"
-            :key="item.id"
-            :value="item.id"
-          >
-            {{ item.label }}
-          </option>
+          <template v-for="category in problem?.signs ?? []" :key="category.id">
+            <optgroup
+              v-if="category.items.length"
+              :label="signCategoryLabel(category.id)"
+            >
+              <option
+                v-for="item in category.items"
+                :key="item.id"
+                :value="item.id"
+              >
+                {{ item.label }}
+              </option>
+            </optgroup>
+          </template>
         </select>
       </label>
 

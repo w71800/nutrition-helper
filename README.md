@@ -15,7 +15,7 @@ npm run dev
 
 - `/` 工具一覽
 - `/tools/pes` PES 診斷文本產生器
-- `/internal/pes-preview` 檢查 staged JSON，確認後寫入 D1
+- `/internal/pes-preview` 檢查目前抽取的那一筆 P（例如 `?id=underweight`）
 
 產生器讀 `/api/pes/catalog`：D1 有已發布版本就用 D1，否則回落到 `data/staged/pes-catalog.json`。
 
