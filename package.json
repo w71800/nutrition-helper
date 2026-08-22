@@ -1,0 +1,32 @@
+{
+  "name": "nutrition-helper",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "dev": "wrangler d1 migrations apply nutrition-helper --local && vite",
+    "build": "vue-tsc --noEmit -p tsconfig.app.json && vite build",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler d1 migrations apply nutrition-helper --remote && wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply nutrition-helper --local",
+    "db:migrate:remote": "wrangler d1 migrations apply nutrition-helper --remote",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "hono": "^4.9.8",
+    "vue": "^3.5.22",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "^1.53.1",
+    "@types/node": "^24.12.3",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "typescript": "~5.9.2",
+    "vite": "^7.1.5",
+    "vue-tsc": "^3.0.8",
+    "wrangler": "^4.125.0"
+  }
+}

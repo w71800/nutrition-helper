@@ -1,0 +1,287 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: #f4f1ea;
+  color: #1c1917;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Songti TC",
+    "Noto Serif TC", serif;
+}
+
+#app,
+.shell {
+  min-height: 100svh;
+}
+
+a {
+  color: inherit;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  background: #fffdf8;
+  border-bottom: 1px solid #e4ddd0;
+}
+
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.92rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #57534e;
+}
+
+.nav a.router-link-active {
+  color: #0f4c3a;
+  font-weight: 600;
+}
+
+.page {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+.page-narrow {
+  max-width: 34rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  color: #0f4c3a;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.7rem;
+  line-height: 1.25;
+}
+
+.lede,
+.subtitle {
+  margin: 0 0 1.5rem;
+  color: #57534e;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.meta-inline {
+  color: #78716c;
+}
+
+.tool-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.tool-card {
+  display: block;
+  padding: 1.15rem 1.2rem;
+  background: #fffdf8;
+  border: 1px solid #e4ddd0;
+  border-radius: 12px;
+  text-decoration: none;
+}
+
+.tool-card h2 {
+  margin: 0.35rem 0 0.4rem;
+  font-size: 1.2rem;
+}
+
+.tool-card p {
+  margin: 0;
+  color: #57534e;
+  line-height: 1.55;
+}
+
+.tool-status {
+  display: inline-block;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: #d9efe4;
+  color: #0f4c3a;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.field-label {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.field select {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  font: inherit;
+  border: 1px solid #d6d0c4;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.field select:disabled {
+  background: #f5f2ea;
+  color: #a8a29e;
+}
+
+.preview,
+.stat,
+.catalog-group,
+.issue-list {
+  margin: 1.15rem 0;
+  padding: 1rem;
+  background: #fffdf8;
+  border: 1px solid #e4ddd0;
+  border-radius: 10px;
+}
+
+.preview-title,
+.catalog-group h2,
+.issue-list h2 {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+}
+
+.preview pre,
+.raw-json {
+  margin: 0;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: #0f4c3a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: #0b3a2c;
+}
+
+.primary-btn:disabled {
+  background: #a8a29e;
+  cursor: not-allowed;
+}
+
+.text-btn {
+  margin-top: 1rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #0f4c3a;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.disclaimer,
+.runtime-note,
+.publish-message,
+.muted {
+  color: #78716c;
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.disclaimer {
+  margin-top: 1.5rem;
+}
+
+.error {
+  color: #9f1239;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.stat {
+  margin: 0;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.4rem;
+}
+
+.issue-list[data-level="error"] {
+  border-color: #fecdd3;
+  background: #fff1f2;
+}
+
+.issue-list[data-level="warning"] {
+  border-color: #fde68a;
+  background: #fffbeb;
+}
+
+.issue-list ul,
+.problem-list {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.problem-list li,
+.issue-list li {
+  margin: 0.35rem 0;
+}
+
+.raw-json {
+  max-height: 28rem;
+  overflow: auto;
+  margin-top: 0.75rem;
+  padding: 0.9rem;
+  background: #1c1917;
+  color: #f5f0e6;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.84em;
+}
+
+@media (min-width: 720px) {
+  .stat-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
