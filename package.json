@@ -11,6 +11,7 @@
     "build": "vue-tsc --noEmit -p tsconfig.app.json && vite build",
     "preview": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler d1 migrations apply nutrition-helper --remote && wrangler deploy",
+    "migrate": "wrangler d1 migrations apply nutrition-helper --local",
     "db:migrate:local": "wrangler d1 migrations apply nutrition-helper --local",
     "db:migrate:remote": "wrangler d1 migrations apply nutrition-helper --remote",
     "cf-typegen": "wrangler types"
