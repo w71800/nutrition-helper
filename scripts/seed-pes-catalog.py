@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Seed Domain/P stubs plus the extracted 體重過輕 example."""
+"""Write the Domain/P identity index. Does not touch staged catalog contents."""
 
 import json
 from pathlib import Path
@@ -201,14 +201,20 @@ PROBLEMS = [
 ]
 
 
+def slim(problem):
+    item = {
+        "id": problem["id"],
+        "label": problem["label"],
+        "page": problem["page"],
+        "domain": problem["domain"],
+    }
+    if problem.get("labelEn"):
+        item["labelEn"] = problem["labelEn"]
+    return item
+
+
 def main():
-    catalog = {
-        "meta": {
-            "terminology": "中文版營養診斷條目",
-            "lastUpdated": "2026-08-22",
-            "disclaimer": "資料依紙本營養診斷手冊整理，供營養師工作輔助。完整內容以紙本為準。",
-            "pesFormat": "P：… / E：… / S：…",
-        },
+    index = {
         "domains": [
             {"id": "anthropometrics", "label": "體位", "labelEn": "Anthropometrics"},
             {"id": "nutritional-status", "label": "營養狀況", "labelEn": "Nutritional status"},
@@ -217,13 +223,12 @@ def main():
             {"id": "physiological", "label": "生理功能", "labelEn": "Physiological function"},
             {"id": "diet-behavior", "label": "飲食型態與行為", "labelEn": "Dietary patterns and behavior"},
         ],
-        "problems": PROBLEMS,
+        "problems": [slim(problem) for problem in PROBLEMS],
     }
 
-    out = Path(__file__).resolve().parents[1] / "data" / "staged" / "pes-catalog.json"
-    out.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    extracted = sum(1 for p in PROBLEMS if p.get("definition") or p["etiologies"])
-    print(f"Wrote {len(PROBLEMS)} problems ({extracted} extracted) to {out}")
+    out = Path(__file__).resolve().parents[1] / "data" / "pes-index.json"
+    out.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"Wrote {len(index['problems'])} problem identities to {out}")
 
 
 if __name__ == "__main__":

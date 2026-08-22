@@ -5,18 +5,17 @@ description: Extract one nutrition PES Problem (P) plus etiologies (E) and five-
 
 # Extract one PES problem
 
-Update **one existing problem** in `data/staged/pes-catalog.json`. Do not add a new P; match by Chinese `label`, English `labelEn`, or `page`.
+Write **the current extraction** into `data/staged/pes-catalog.json`. Staged `problems` should contain only this P (or the two P that share a printed page). Do not keep the rest of the catalog.
 
-Canonical example: `id: "underweight"`（體重過輕, p.8–9）.
+Match identity from `data/pes-index.json` by Chinese `label`, English `labelEn`, or `page`. Reuse that `id`, `label`, `labelEn`, `page`, and `domain` unless the index was clearly wrong.
 
 ## Workflow
 
-1. Read `shared/pes.ts` and the target stub in `data/staged/pes-catalog.json`.
+1. Read `shared/pes.ts` and `data/pes-index.json`.
 2. Transcribe from the photos/text. Do not invent missing E or S.
-3. Fill only that problem: `definition`, `etiologies`, `signs`.
-4. Keep `id`, `label`, `labelEn`, `page`, `domain` unless the index was clearly wrong.
-5. If two P share a printed page (明顯／嚴重體重減輕; 第 11 頁肥胖群), still write **separate records**. Copy shared E/S, then apply only the differences.
-6. After writing, typecheck if you touched TS. Tell the user to open `/internal/pes-preview?id=<problem-id>`.
+3. Keep staged `meta` and `domains`. Replace `problems` with the filled record(s) only.
+4. If two P share a printed page (明顯／嚴重體重減輕; 第 11 頁肥胖群), still write **separate records**. Copy shared E/S, then apply only the differences.
+5. After writing, typecheck if you touched TS. Tell the user to open `/internal/pes-preview`.
 
 ## Field rules
 
@@ -47,6 +46,6 @@ Canonical example: `id: "underweight"`（體重過輕, p.8–9）.
 
 Fill what is visible. Leave the rest empty. Say what is still missing (E page vs S page).
 
-## Example shape
+## After publish
 
-See `underweight` in `data/staged/pes-catalog.json`. Preview shows that one object, not the whole catalog.
+Successful「寫入 D1」merges staged problems into the published catalog and clears staged `problems`. The next extraction starts from an empty `problems` array.

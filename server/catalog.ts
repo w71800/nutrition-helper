@@ -1,3 +1,4 @@
+import { emptyStagedCatalog } from "@shared/catalog";
 import type { CatalogVersionMeta, PesCatalog } from "@shared/pes";
 
 const TOOL = "pes";
@@ -53,6 +54,46 @@ export async function getPublishedCatalog(db: D1Database): Promise<PublishedCata
   } catch {
     return null;
   }
+}
+
+export async function hashCatalog(catalog: PesCatalog): Promise<string> {
+  return sha256(JSON.stringify(catalog));
+}
+
+export async function resolveStagedCatalog(db: D1Database, staged: PesCatalog): Promise<PesCatalog> {
+  if (staged.problems.length === 0) return staged;
+
+  const ingested = await getStagedIngestHash(db);
+  if (!ingested) return staged;
+
+  const hash = await hashCatalog(staged);
+  return ingested === hash ? emptyStagedCatalog(staged) : staged;
+}
+
+async function getStagedIngestHash(db: D1Database): Promise<string | null> {
+  try {
+    const row = await db
+      .prepare(`SELECT staged_hash FROM catalog_ingest WHERE tool = ?`)
+      .bind(TOOL)
+      .first<{ staged_hash: string }>();
+    return row?.staged_hash ?? null;
+  } catch {
+    return null;
+  }
+}
+
+export async function recordStagedIngest(db: D1Database, staged: PesCatalog): Promise<void> {
+  const stagedHash = await hashCatalog(staged);
+  await db
+    .prepare(
+      `INSERT INTO catalog_ingest (tool, staged_hash, ingested_at)
+       VALUES (?, ?, datetime('now'))
+       ON CONFLICT(tool) DO UPDATE SET
+         staged_hash = excluded.staged_hash,
+         ingested_at = excluded.ingested_at`,
+    )
+    .bind(TOOL, stagedHash)
+    .run();
 }
 
 export async function publishCatalog(db: D1Database, catalog: PesCatalog): Promise<CatalogVersionMeta> {

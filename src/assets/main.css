@@ -165,9 +165,14 @@ h1 {
 
 .preview-title,
 .catalog-group h2,
+.catalog-group h3,
 .issue-list h2 {
   margin: 0 0 0.6rem;
   font-size: 0.95rem;
+}
+
+.catalog-group h3 {
+  margin-top: 1rem;
 }
 
 .preview pre,
@@ -309,6 +314,6 @@ code {
 
 @media (min-width: 720px) {
   .stat-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }

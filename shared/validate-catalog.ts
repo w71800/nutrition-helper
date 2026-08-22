@@ -59,9 +59,6 @@ export function validatePesCatalog(input: unknown): CatalogValidation {
   }
 
   stats.problems = input.problems.length;
-  if (input.problems.length === 0) {
-    errors.push({ level: "error", path: "problems", message: "至少需要一筆 problem" });
-  }
 
   const problemIds = new Set<string>();
   input.problems.forEach((problem, pIndex) => {

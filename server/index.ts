@@ -1,9 +1,17 @@
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
-import stagedCatalog from "../data/staged/pes-catalog.json";
-import type { PublishResponse } from "@shared/pes";
+import stagedCatalogJson from "../data/staged/pes-catalog.json";
+import { isProblemExtracted, mergePesCatalog } from "@shared/catalog";
+import type { PesCatalog, PublishResponse } from "@shared/pes";
 import { validatePesCatalog } from "@shared/validate-catalog";
-import { getPublishedCatalog, publishCatalog } from "./catalog";
+import {
+  getPublishedCatalog,
+  publishCatalog,
+  recordStagedIngest,
+  resolveStagedCatalog,
+} from "./catalog";
+
+const stagedCatalog = stagedCatalogJson as PesCatalog;
 
 const app = new Hono<{ Bindings: Env }>();
 
@@ -19,33 +27,57 @@ app.get("/api/pes/catalog", async (c) => {
     });
   }
 
+  const staged = await resolveStagedCatalog(c.env.DB, stagedCatalog);
   return c.json({
     source: "staged",
-    catalog: stagedCatalog,
+    catalog: staged,
   });
 });
 
-app.get("/api/internal/pes/staged", (c) => {
-  const validation = validatePesCatalog(stagedCatalog);
+app.get("/api/internal/pes/staged", async (c) => {
+  const catalog = await resolveStagedCatalog(c.env.DB, stagedCatalog);
+  const validation = validatePesCatalog(catalog);
   return c.json({
-    catalog: stagedCatalog,
+    catalog,
     validation,
   });
 });
 
 app.post("/api/internal/pes/publish", async (c) => {
-  const validation = validatePesCatalog(stagedCatalog);
-  if (!validation.ok) {
+  const visible = await resolveStagedCatalog(c.env.DB, stagedCatalog);
+  const extracted = visible.problems.filter(isProblemExtracted);
+  const validation = validatePesCatalog(visible);
+
+  if (!validation.ok || extracted.length === 0) {
     const body: PublishResponse = {
       ok: false,
-      message: "staged 資料未通過校驗，無法寫入",
+      message:
+        extracted.length === 0
+          ? "沒有待寫入的抽取資料"
+          : "staged 資料未通過校驗，無法寫入",
       validation,
     };
     return c.json(body, 400);
   }
 
+  const published = await getPublishedCatalog(c.env.DB);
+  const merged = mergePesCatalog(published?.catalog ?? null, {
+    ...visible,
+    problems: extracted,
+  });
+  const mergedValidation = validatePesCatalog(merged);
+  if (!mergedValidation.ok) {
+    const body: PublishResponse = {
+      ok: false,
+      message: "合併後的目錄未通過校驗，無法寫入",
+      validation: mergedValidation,
+    };
+    return c.json(body, 400);
+  }
+
   try {
-    const version = await publishCatalog(c.env.DB, stagedCatalog);
+    const version = await publishCatalog(c.env.DB, merged);
+    await recordStagedIngest(c.env.DB, stagedCatalog);
     const body: PublishResponse = { ok: true, version };
     return c.json(body);
   } catch (error) {

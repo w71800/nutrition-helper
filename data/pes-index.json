@@ -1,0 +1,477 @@
+{
+  "domains": [
+    {
+      "id": "anthropometrics",
+      "label": "體位",
+      "labelEn": "Anthropometrics"
+    },
+    {
+      "id": "nutritional-status",
+      "label": "營養狀況",
+      "labelEn": "Nutritional status"
+    },
+    {
+      "id": "energy-intake",
+      "label": "熱量攝取",
+      "labelEn": "Energy intake"
+    },
+    {
+      "id": "nutrient-intake",
+      "label": "營養素攝取",
+      "labelEn": "Nutrient intake"
+    },
+    {
+      "id": "physiological",
+      "label": "生理功能",
+      "labelEn": "Physiological function"
+    },
+    {
+      "id": "diet-behavior",
+      "label": "飲食型態與行為",
+      "labelEn": "Dietary patterns and behavior"
+    }
+  ],
+  "problems": [
+    {
+      "id": "underweight",
+      "label": "體重過輕",
+      "labelEn": "Underweight",
+      "page": 8,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "overweight",
+      "label": "體重過重",
+      "labelEn": "Overweight",
+      "page": 11,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "mild-obesity",
+      "label": "輕度肥胖",
+      "labelEn": "Mild obesity",
+      "page": 11,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "moderate-obesity",
+      "label": "中度肥胖",
+      "labelEn": "Moderate obesity",
+      "page": 11,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "severe-obesity",
+      "label": "重度肥胖",
+      "labelEn": "Severe obesity",
+      "page": 11,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "morbid-obesity",
+      "label": "病態性肥胖",
+      "labelEn": "Morbid obesity",
+      "page": 11,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "abdominal-obesity",
+      "label": "腹部肥胖",
+      "labelEn": "Abdominal obesity",
+      "page": 11,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "excessive-body-fat-percent",
+      "label": "體脂肪百分比過高",
+      "labelEn": "Excessive percentage of body fat",
+      "page": 11,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "normal-body-weight",
+      "label": "體位正常",
+      "labelEn": "Body weight in normal range",
+      "page": 14,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "significant-weight-loss",
+      "label": "明顯的體重減輕",
+      "labelEn": "Significant weight loss",
+      "page": 15,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "severe-weight-loss",
+      "label": "嚴重的體重減輕",
+      "labelEn": "Severe weight loss",
+      "page": 15,
+      "domain": "anthropometrics"
+    },
+    {
+      "id": "mild-pem",
+      "label": "輕度蛋白質-熱量營養不良",
+      "labelEn": "Mild PEM",
+      "page": 17,
+      "domain": "nutritional-status"
+    },
+    {
+      "id": "moderate-pem",
+      "label": "中度蛋白質-熱量營養不良",
+      "labelEn": "Moderate PEM",
+      "page": 20,
+      "domain": "nutritional-status"
+    },
+    {
+      "id": "severe-pem",
+      "label": "重度蛋白質-熱量營養不良",
+      "labelEn": "Severe PEM",
+      "page": 23,
+      "domain": "nutritional-status"
+    },
+    {
+      "id": "kwashiorkor",
+      "label": "夸西柯病",
+      "labelEn": "Kwashiorkor",
+      "page": 25,
+      "domain": "nutritional-status"
+    },
+    {
+      "id": "marasmus",
+      "label": "消瘦症",
+      "labelEn": "Marasmus",
+      "page": 27,
+      "domain": "nutritional-status"
+    },
+    {
+      "id": "excessive-caloric-intake",
+      "label": "熱量攝取過多",
+      "labelEn": "Excessive caloric intake",
+      "page": 29,
+      "domain": "energy-intake"
+    },
+    {
+      "id": "adequate-caloric-intake",
+      "label": "熱量攝取足夠",
+      "labelEn": "Adequate caloric intake",
+      "page": 31,
+      "domain": "energy-intake"
+    },
+    {
+      "id": "inadequate-caloric-intake",
+      "label": "熱量攝取不足",
+      "labelEn": "Inadequate caloric intake",
+      "page": 32,
+      "domain": "energy-intake"
+    },
+    {
+      "id": "extreme-energy-restriction",
+      "label": "極度熱量限制",
+      "labelEn": "Extreme energy restriction",
+      "page": 34,
+      "domain": "energy-intake"
+    },
+    {
+      "id": "excessive-carbohydrate-intake",
+      "label": "碳水化合物攝取過多",
+      "labelEn": "Excessive carbohydrate intake",
+      "page": 35,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-carbohydrate-intake",
+      "label": "碳水化合物攝取偏低",
+      "labelEn": "Inadequate carbohydrate intake",
+      "page": 37,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-sugar-intake",
+      "label": "精製糖攝取過多",
+      "labelEn": "Excessive sugar intake",
+      "page": 39,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-total-fat-intake",
+      "label": "脂肪攝取過多",
+      "labelEn": "Excessive total fat intake",
+      "page": 40,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-total-fat-intake",
+      "label": "脂肪攝取偏低",
+      "labelEn": "Inadequate total fat intake",
+      "page": 42,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-sfa-intake",
+      "label": "飽和脂肪酸攝取過多",
+      "labelEn": "Excessive SFA intake",
+      "page": 44,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-pufa-intake",
+      "label": "多元不飽和脂肪酸攝取過多",
+      "labelEn": "Excessive PUFA intake",
+      "page": 45,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-mufa-intake",
+      "label": "單元不飽和脂肪酸攝取過多",
+      "labelEn": "Excessive MUFA intake",
+      "page": 46,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "low-carb-high-fat-intake",
+      "label": "低碳水化合物高脂肪攝取",
+      "labelEn": "Low carbohydrate, high fat intake",
+      "page": 47,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-protein-intake",
+      "label": "蛋白質攝取過多",
+      "labelEn": "Excessive protein intake",
+      "page": 48,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-protein-intake",
+      "label": "蛋白質攝取偏低",
+      "labelEn": "Inadequate protein intake",
+      "page": 50,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-hbv-protein-intake",
+      "label": "高生理價蛋白質攝取不足",
+      "labelEn": "Inadequate HBV protein intake",
+      "page": 52,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-fiber-intake",
+      "label": "膳食纖維攝取過多",
+      "labelEn": "Excessive dietary fiber intake",
+      "page": 53,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-fiber-intake",
+      "label": "膳食纖維攝取不足",
+      "labelEn": "Inadequate dietary fiber intake",
+      "page": 55,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-cholesterol-intake",
+      "label": "膽固醇攝取過多",
+      "labelEn": "Excessive cholesterol intake",
+      "page": 57,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-mineral-intake",
+      "label": "礦物質攝取過多",
+      "labelEn": "Excessive mineral intake",
+      "page": 58,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-mineral-intake",
+      "label": "礦物質攝取偏低",
+      "labelEn": "Inadequate mineral intake",
+      "page": 61,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-vitamin-intake",
+      "label": "維生素攝取過多",
+      "labelEn": "Excessive vitamin intake",
+      "page": 64,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-vitamin-intake",
+      "label": "維生素攝取偏低",
+      "labelEn": "Inadequate vitamin intake",
+      "page": 66,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-fluid-intake",
+      "label": "水份攝取過多",
+      "labelEn": "Excessive fluid intake",
+      "page": 69,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-fluid-intake",
+      "label": "水分攝取不足",
+      "labelEn": "Inadequate fluid intake",
+      "page": 72,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "imbalance-of-nutrients",
+      "label": "營養素不均衡",
+      "labelEn": "Imbalance of nutrients",
+      "page": 74,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-en-infusion",
+      "label": "腸道營養灌食不足",
+      "labelEn": "Inadequate enteral nutrition infusion",
+      "page": 76,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-en-infusion",
+      "label": "腸道營養灌食過多",
+      "labelEn": "Excessive enteral nutrition infusion",
+      "page": 78,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "inadequate-pn-infusion",
+      "label": "靜脈營養量不足",
+      "labelEn": "Inadequate parenteral nutrition infusion",
+      "page": 79,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "excessive-pn-infusion",
+      "label": "靜脈營養量過多",
+      "labelEn": "Excessive parenteral nutrition infusion",
+      "page": 81,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "food-medication-interaction",
+      "label": "食物與藥物交互作用",
+      "labelEn": "Food-medication interaction",
+      "page": 82,
+      "domain": "nutrient-intake"
+    },
+    {
+      "id": "swallowing-difficulty",
+      "label": "吞嚥困難",
+      "labelEn": "Swallowing difficulty",
+      "page": 83,
+      "domain": "physiological"
+    },
+    {
+      "id": "masticatory-difficulty",
+      "label": "咀嚼困難",
+      "labelEn": "Masticatory difficulty",
+      "page": 85,
+      "domain": "physiological"
+    },
+    {
+      "id": "altered-gi-function",
+      "label": "腸胃道功能改變",
+      "labelEn": "Altered gastrointestinal (GI) function",
+      "page": 87,
+      "domain": "physiological"
+    },
+    {
+      "id": "impaired-nutrient-utilization",
+      "label": "營養素利用變差",
+      "labelEn": "Impaired nutrient utilization",
+      "page": 89,
+      "domain": "physiological"
+    },
+    {
+      "id": "altered-nutrition-labs",
+      "label": "營養相關生化值改變",
+      "labelEn": "Altered nutrition-related laboratory values",
+      "page": 91,
+      "domain": "physiological"
+    },
+    {
+      "id": "breastfeeding-difficulty",
+      "label": "餵食母乳困難",
+      "labelEn": "Breastfeeding difficulty",
+      "page": 93,
+      "domain": "physiological"
+    },
+    {
+      "id": "excessive-alcohol-intake",
+      "label": "飲酒過量",
+      "labelEn": "Excessive alcohol intake",
+      "page": 95,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "limited-access-to-food-or-fluid",
+      "label": "獲取食物或水的管道受限",
+      "labelEn": "Limited access to food and/or fluid",
+      "page": 97,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "food-nutrition-knowledge-deficit",
+      "label": "食物與營養的知識缺乏",
+      "labelEn": "Food- and nutrition-related knowledge deficit",
+      "page": 99,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "harmful-food-beliefs",
+      "label": "不適當的營養態度",
+      "labelEn": "Harmful beliefs/attitudes or practices about food, nutrition, and nutrition-related topics",
+      "page": 101,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "not-ready-for-change",
+      "label": "尚未準備好進行飲食或生活型態的改變",
+      "labelEn": "Not ready for diet/lifestyle change",
+      "page": 102,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "self-compliance-deficit",
+      "label": "自我執行能力不足",
+      "labelEn": "Self-compliance deficit",
+      "page": 104,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "limited-adherence",
+      "label": "無法確實執行營養相關建議",
+      "labelEn": "Limited adherence to nutrition-related recommendations",
+      "page": 106,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "undesirable-food-choices",
+      "label": "不適當的食物選擇",
+      "labelEn": "Undesirable food choices",
+      "page": 108,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "inadequate-exercise",
+      "label": "運動不足",
+      "labelEn": "Inadequate exercise",
+      "page": 110,
+      "domain": "diet-behavior"
+    },
+    {
+      "id": "no-nutrition-problem",
+      "label": "此刻沒有營養相關問題",
+      "labelEn": "Without nutritional related problem recently",
+      "page": 111,
+      "domain": "diet-behavior"
+    }
+  ]
+}

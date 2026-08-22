@@ -15,20 +15,22 @@ npm run dev
 
 - `/` 工具一覽
 - `/tools/pes` PES 診斷文本產生器
-- `/internal/pes-preview` 檢查目前抽取的那一筆 P（例如 `?id=underweight`）
+- `/internal/pes-preview` 檢查目前 staged 裡待入庫的抽取結果
 
 產生器讀 `/api/pes/catalog`：D1 有已發布版本就用 D1，否則回落到 `data/staged/pes-catalog.json`。
 
 ## 資料流
 
 1. 原始材料放 `data/sources/`
-2. 轉成 `data/staged/pes-catalog.json`（進 git）
+2. 目前抽取的 P 寫入 `data/staged/pes-catalog.json`（只放這一筆／同一頁的幾筆）
 3. 在 `/internal/pes-preview` 確認
-4. 寫入 D1 `catalog_versions`
+4. 寫入 D1 `catalog_versions`（與既有目錄合併），成功後清空 staged
+
+P 的 id／名稱／頁碼索引在 `data/pes-index.json`。
 
 ## PES 資料來源
 
-staged 主檔依 eNCPT / NCPT 2023 公開術語整理，完整 E／S 清單以訂閱 [eNCPT](https://www.ncpro.org/) 為準。原始 PDF 在 `data/sources/`。
+索引依 eNCPT / NCPT 2023 公開術語整理，完整 E／S 清單以訂閱 [eNCPT](https://www.ncpro.org/) 為準。原始 PDF 在 `data/sources/`。
 
 ## 部署
 
