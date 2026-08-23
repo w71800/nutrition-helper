@@ -14,6 +14,7 @@
     "migrate": "wrangler d1 migrations apply nutrition-helper --local",
     "db:migrate:local": "wrangler d1 migrations apply nutrition-helper --local",
     "db:migrate:remote": "wrangler d1 migrations apply nutrition-helper --remote",
+    "db:push": "bash scripts/d1-push-local-to-remote.sh",
     "cf-typegen": "wrangler types"
   },
   "dependencies": {

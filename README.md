@@ -34,9 +34,15 @@ P 的 id／名稱／頁碼索引在 `data/pes-index.json`。
 
 ## 部署
 
-第一次上正式環境前，先建立 D1 並把 id 填進 `wrangler.jsonc`：
+第一次上正式環境前，先建立 D1 並把 id 填進 `wrangler.jsonc`。完整步驟見 [docs/deploy.md](docs/deploy.md)。
 
 ```bash
 npx wrangler d1 create nutrition-helper
 npm run deploy
+```
+
+本機已發布的 D1 目錄要同步到線上：
+
+```bash
+npm run db:push
 ```
