@@ -509,6 +509,113 @@ h1 {
   cursor: not-allowed;
 }
 
+.copy-btn {
+  position: relative;
+}
+
+.copy-btn-face {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.copy-btn-check {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.copy-btn-check path {
+  stroke-dasharray: 28;
+  stroke-dashoffset: 28;
+  animation: copy-check-draw 0.42s 0.06s ease forwards;
+}
+
+.copy-btn[data-copied] {
+  animation: copy-pop 0.48s cubic-bezier(0.22, 1.4, 0.36, 1);
+}
+
+.copy-btn[data-copied] .copy-btn-face {
+  animation: copy-label-in 0.32s ease;
+}
+
+.copy-btn[data-copied]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 32%,
+    color-mix(in srgb, var(--btn-fg) 32%, transparent) 48%,
+    transparent 64%
+  );
+  background-size: 220% 100%;
+  background-position: 120% 0;
+  animation: copy-shine 0.62s ease-out;
+}
+
+@keyframes copy-pop {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(0.94);
+  }
+
+  62% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes copy-label-in {
+  from {
+    opacity: 0.35;
+    transform: translateY(7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes copy-check-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes copy-shine {
+  to {
+    background-position: -40% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy-btn[data-copied],
+  .copy-btn[data-copied] .copy-btn-face,
+  .copy-btn[data-copied]::after,
+  .copy-btn-check path {
+    animation: none;
+  }
+
+  .copy-btn-check path {
+    stroke-dashoffset: 0;
+  }
+}
+
 .text-btn {
   margin-top: 1rem;
   padding: 0;

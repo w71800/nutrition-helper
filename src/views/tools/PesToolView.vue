@@ -16,6 +16,7 @@ const source = ref<CatalogResponse["source"] | null>(null);
 const versionLabel = ref<string | null>(null);
 const loadError = ref<string | null>(null);
 const copied = ref(false);
+let copiedTimer = 0;
 
 const {
   problemId,
@@ -96,7 +97,8 @@ async function handleCopy() {
   if (!previewText.value) return;
   await navigator.clipboard.writeText(previewText.value);
   copied.value = true;
-  window.setTimeout(() => {
+  window.clearTimeout(copiedTimer);
+  copiedTimer = window.setTimeout(() => {
     copied.value = false;
   }, 2000);
 }
@@ -155,8 +157,24 @@ async function handleCopy() {
         <pre>{{ previewText }}</pre>
       </section>
 
-      <button type="button" class="primary-btn" :disabled="!ready" @click="handleCopy">
-        {{ copied ? "已複製" : "一鍵複製" }}
+      <button
+        type="button"
+        class="primary-btn copy-btn"
+        :data-copied="copied ? 'true' : undefined"
+        :disabled="!ready"
+        @click="handleCopy"
+      >
+        <span class="copy-btn-face">
+          <svg
+            v-if="copied"
+            class="copy-btn-check"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M5 12.5l4.5 4.5L19 7.5" />
+          </svg>
+          <span>{{ copied ? "已複製" : "一鍵複製" }}</span>
+        </span>
       </button>
 
       <p v-if="catalog.meta?.disclaimer" class="disclaimer">
