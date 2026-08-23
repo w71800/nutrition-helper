@@ -2,6 +2,10 @@
 import { computed, onMounted, ref } from "vue";
 import { signCategoryLabel } from "@shared/catalog";
 import type { CatalogResponse, PesCatalog } from "@shared/pes";
+import AppSelect, {
+  type AppSelectGroup,
+  type AppSelectOption,
+} from "@/components/AppSelect.vue";
 import { usePesCascade } from "@/composables/usePesCascade";
 import { fetchPesCatalog } from "@/lib/api";
 import { formatPesForClipboard } from "@/lib/formatPes";
@@ -27,6 +31,43 @@ const {
 
 const problemsByDomain = computed(() =>
   catalog.value ? groupProblemsByDomain(catalog.value) : [],
+);
+
+const problemGroups = computed<AppSelectGroup[]>(() =>
+  problemsByDomain.value.map((group) => ({
+    id: group.id,
+    label: group.label,
+    options: group.items.map((item) => ({
+      value: item.id,
+      label: `${item.label}（p.${item.page}）`,
+    })),
+  })),
+);
+
+const etiologyOptions = computed<AppSelectOption[]>(() => {
+  if (!problem.value) return [];
+  if (!hasEtiologies.value) return [{ value: "none", label: "無" }];
+  return problem.value.etiologies.map((item) => ({
+    value: item.id,
+    label: item.label,
+  }));
+});
+
+const etiologyValue = computed(() =>
+  problem.value && !hasEtiologies.value ? "none" : etiologyId.value,
+);
+
+const signGroups = computed<AppSelectGroup[]>(() =>
+  (problem.value?.signs ?? [])
+    .filter((category) => category.items.length)
+    .map((category) => ({
+      id: category.id,
+      label: signCategoryLabel(category.id),
+      options: category.items.map((item) => ({
+        value: item.id,
+        label: item.label,
+      })),
+    })),
 );
 
 const previewText = computed(() =>
@@ -77,66 +118,37 @@ async function handleCopy() {
         <span v-if="versionLabel" class="meta-inline">· {{ versionLabel }}</span>
       </p>
 
-      <label class="field">
-        <span class="field-label">P（問題）</span>
-        <select :value="problemId" @change="onProblemChange(($event.target as HTMLSelectElement).value)">
-          <option value="">請選擇</option>
-          <optgroup
-            v-for="group in problemsByDomain"
-            :key="group.id"
-            :label="group.label"
-          >
-            <option v-for="item in group.items" :key="item.id" :value="item.id">
-              {{ item.label }}（p.{{ item.page }}）
-            </option>
-          </optgroup>
-        </select>
-      </label>
+      <div class="field">
+        <label class="field-label" for="pes-problem">P（問題）</label>
+        <AppSelect
+          id="pes-problem"
+          :model-value="problemId"
+          :groups="problemGroups"
+          @update:model-value="onProblemChange"
+        />
+      </div>
 
-      <label class="field">
-        <span class="field-label">E（病因）</span>
-        <select
-          :value="problem && !hasEtiologies ? 'none' : etiologyId"
+      <div class="field">
+        <label class="field-label" for="pes-etiology">E（病因）</label>
+        <AppSelect
+          id="pes-etiology"
+          :model-value="etiologyValue"
+          :options="etiologyOptions"
           :disabled="!problem || !hasEtiologies"
-          @change="etiologyId = ($event.target as HTMLSelectElement).value"
-        >
-          <option v-if="!problem || hasEtiologies" value="">請選擇</option>
-          <option v-else value="none">無</option>
-          <option
-            v-for="item in problem?.etiologies ?? []"
-            :key="item.id"
-            :value="item.id"
-          >
-            {{ item.label }}
-          </option>
-        </select>
+          @update:model-value="etiologyId = $event"
+        />
         <span v-if="etiologyMissing" class="field-hint">請選擇病因</span>
-      </label>
+      </div>
 
-      <label class="field">
-        <span class="field-label">S（徵象）</span>
-        <select
-          :value="signId"
+      <div class="field">
+        <label class="field-label" for="pes-sign">S（徵象）</label>
+        <AppSelect
+          id="pes-sign"
+          v-model="signId"
+          :groups="signGroups"
           :disabled="!problem"
-          @change="signId = ($event.target as HTMLSelectElement).value"
-        >
-          <option value="">請選擇</option>
-          <template v-for="category in problem?.signs ?? []" :key="category.id">
-            <optgroup
-              v-if="category.items.length"
-              :label="signCategoryLabel(category.id)"
-            >
-              <option
-                v-for="item in category.items"
-                :key="item.id"
-                :value="item.id"
-              >
-                {{ item.label }}
-              </option>
-            </optgroup>
-          </template>
-        </select>
-      </label>
+        />
+      </div>
 
       <section v-if="labels" class="preview" aria-live="polite">
         <h2 class="preview-title">預覽</h2>
