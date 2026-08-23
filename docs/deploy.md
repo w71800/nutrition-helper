@@ -59,7 +59,7 @@ npm run db:migrate:remote
 npm run db:push
 ```
 
-這會**覆寫**遠端的 `catalog_versions`、`catalog_ingest`，使遠端與本機相同。本機若沒有 `catalog_versions` 資料會中止，以免清空遠端。
+這會把本機**最新一筆** published catalog（以及 `catalog_ingest`）用參數綁定寫入遠端，再刪掉遠端其他舊版本。不搬全部歷史快照，也不走 `wrangler d1 execute --file`，以免整本 JSON 寫進 SQL 後觸發 `SQLITE_TOOBIG`（D1 單條 SQL 上限 100 KB）。本機若沒有 published 資料會中止。
 
 建議正式寫入也可直接在線上 `/internal/pes-preview` 做；`db:push` 適合本機已確認、要一次對齊遠端的時候。
 
