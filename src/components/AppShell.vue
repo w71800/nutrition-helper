@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import { CASE_VIEWER_URL } from "@/config/tools";
 import { useTheme } from "@/composables/useTheme";
 
 const { theme, toggleTheme } = useTheme();
@@ -13,6 +14,11 @@ const { theme, toggleTheme } = useTheme();
         <nav class="nav">
           <RouterLink to="/">工具</RouterLink>
           <RouterLink to="/tools/pes">PES 產生器</RouterLink>
+          <a
+            :href="CASE_VIEWER_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+          >個案檢視</a>
           <RouterLink to="/internal/pes-preview">資料預覽</RouterLink>
         </nav>
         <button
